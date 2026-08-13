@@ -1,0 +1,19 @@
+# Raw Cognizant/Synthea datasets
+data/raw/
+
+# Generated processed datasets
+data/processed/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# Environment/secrets
+.env
