@@ -1,0 +1,32 @@
+{
+  "general": {
+    "CensusTract20": "Census tract 2020 | Census tract number in 2020",
+    "State": "State | State name",
+    "County20": "County 2020 | County name in 2020",
+    "Urban": "Urban tract | Flag for urban tract",
+    "POP2020": "Population, tract total | Population count from 2020 census",
+    "OHU2020": "Housing units, total | Occupied housing unit count from 2020 census",
+    "LowIncomeTracts": "Low income tract | Flag for low income tract",
+    "PovertyRate": "Tract poverty rate | Share of the tract population living with income at or below the Federal poverty thresholds for family size",
+    "TractHUNV": "Tract housing units without a vehicle, number | Total count of housing units without a vehicle in tract",
+    "TractSNAP": "Tract housing units receiving SNAP benefits, number | Total count of housing units receiving SNAP benefits in tract"
+  },
+  "driving": {
+    "CensusTract20": "Census tract 2020 | Census tract number in 2020",
+    "DD_SRAM_LILATracts_1And10": "Driving Distance, SNAP-authorized Retailer Access Map, Low income and low access tract measured at 1 mile for urban areas and 10 miles for rural areas | Flag for low-income and low access when considering low accessibilty at 1 and 10 miles, calculated using driving (network-based) distance",
+    "DD_SRAM_HUNVFlag": "Driving Distance, SNAP-authorized Retailer Access Map, Vehicle access, tract with low vehicle access | Flag for tract where >= 100 of households do not have a vehicle, and beyond 1/2 mile from SNAP-authorized foodstore, calculated using driving (network-based) distance",
+    "DD_SRAM_LAPOP1_10": "Driving Distance, SNAP-authorized Retailer Access Map, Low access, population at 1 mile for urban areas and 10 miles for rural areas, number | Population count beyond 1 mile for urban areas or 10 miles for rural areas from SNAP-authorized foodstore, calculated using driving (network-based) distance",
+    "DD_SRAM_lapop1share": "Driving Distance, SNAP-authorized Retailer Access Map, Low access, population at 1 mile, share | Share of tract population that are beyond 1 mile from SNAP-authorized foodstore, calculated using driving (network-based) distance",
+    "DD_SRAM_lahunv1": "Driving Distance, SNAP-authorized Retailer Access Map, Vehicle access, housing units without and low access at 1 mile, number | Housing units without vehicle count beyond 1 mile from SNAP-authorized foodstore, calculated using driving (network-based) distance",
+    "DD_SRAM_lasnap1": "Driving Distance, SNAP-authorized Retailer Access Map, Low access, housing units receiving SNAP benefits at 1 mile, number | Housing units receiving SNAP benefits count beyond 1 mile from SNAP-authorized foodstore, calculated using driving (network-based) distance"
+  },
+  "straight": {
+    "CensusTract20": "Census tract 2020 | Census tract number in 2020",
+    "SD_SRAM_LILATracts_1And10": "Straight-line Distance, SNAP-authorized Retailer Access Map, Low income and low access tract measured at 1 mile for urban areas and 10 miles for rural areas | Flag for low-income and low access when considering low accessibilty at 1 and 10 miles, calculated using straight-line (Euclidean-based) distance",
+    "SD_SRAM_HUNVFlag": "Straight-line Distance, SNAP-authorized Retailer Access Map, Vehicle access, tract with low vehicle access | Flag for tract where >= 100 of households do not have a vehicle, and beyond 1/2 mile from SNAP-authorized foodstore, calculated using straight-line (Euclidean-based) distance",
+    "SD_SRAM_LAPOP1_10": "Straight-line Distance, SNAP-authorized Retailer Access Map, Low access, population at 1 mile for urban areas and 10 miles for rural areas, number | Population count beyond 1 mile for urban areas or 10 miles for rural areas from SNAP-authorized foodstore, calculated using straight-line (Euclidean-based) distance",
+    "SD_SRAM_lapop1share": "Straight-line Distance, SNAP-authorized Retailer Access Map, Low access, population at 1 mile, share | Share of tract population that are beyond 1 mile from SNAP-authorized foodstore, calculated using straight-line (Euclidean-based) distance",
+    "SD_SRAM_lahunv1": "Straight-line Distance, SNAP-authorized Retailer Access Map, Vehicle access, housing units without and low access at 1 mile, number | Housing units without vehicle count beyond 1 mile from SNAP-authorized foodstore, calculated using straight-line (Euclidean-based) distance",
+    "SD_SRAM_lasnap1": "Straight-line Distance, SNAP-authorized Retailer Access Map, Low access, housing units receiving SNAP benefits at 1 mile, number | Housing units receiving SNAP benefits count beyond 1 mile from SNAP-authorized foodstore, calculated using straight-line (Euclidean-based) distance"
+  }
+}

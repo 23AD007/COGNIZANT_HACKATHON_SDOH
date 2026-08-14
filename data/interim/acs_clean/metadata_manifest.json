@@ -1,0 +1,109 @@
+{
+  "DP02": {
+    "education_less_than_9th_pct": {
+      "source_code": "DP02_0060PE",
+      "metadata_label": "Percent!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Less than 9th grade"
+    },
+    "education_9th_to_12th_no_diploma_pct": {
+      "source_code": "DP02_0061PE",
+      "metadata_label": "Percent!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!9th to 12th grade, no diploma"
+    },
+    "digital_with_computer_pct": {
+      "source_code": "DP02_0153PE",
+      "metadata_label": "Percent!!COMPUTERS AND INTERNET USE!!Total households!!With a computer"
+    },
+    "digital_with_broadband_pct": {
+      "source_code": "DP02_0154PE",
+      "metadata_label": "Percent!!COMPUTERS AND INTERNET USE!!Total households!!With a broadband Internet subscription"
+    }
+  },
+  "DP03": {
+    "unemployment_pct": {
+      "source_code": "DP03_0005PE",
+      "metadata_label": "Percent!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force!!Civilian labor force!!Unemployed"
+    },
+    "public_assistance_pct": {
+      "source_code": "DP03_0072PE",
+      "metadata_label": "Percent!!INCOME AND BENEFITS (IN 2024 INFLATION-ADJUSTED DOLLARS)!!Total households!!With cash public assistance income"
+    },
+    "uninsured_pct": {
+      "source_code": "DP03_0099PE",
+      "metadata_label": "Percent!!HEALTH INSURANCE COVERAGE!!Civilian noninstitutionalized population!!No health insurance coverage"
+    },
+    "mean_commute_minutes": {
+      "source_code": "DP03_0025E",
+      "metadata_label": "Estimate!!COMMUTING TO WORK!!Workers 16 years and over!!Mean travel time to work (minutes)"
+    }
+  },
+  "DP04": {
+    "housing_vacancy_pct": {
+      "source_code": "DP04_0003PE",
+      "metadata_label": "Percent!!HOUSING OCCUPANCY!!Total housing units!!Vacant housing units"
+    },
+    "housing_no_vehicle_pct": {
+      "source_code": "DP04_0058PE",
+      "metadata_label": "Percent!!VEHICLES AVAILABLE!!Occupied housing units!!No vehicles available"
+    },
+    "housing_renter_pct": {
+      "source_code": "DP04_0047PE",
+      "metadata_label": "Percent!!HOUSING TENURE!!Occupied housing units!!Renter-occupied"
+    },
+    "housing_crowded_1_01_to_1_50_pct": {
+      "source_code": "DP04_0078PE",
+      "metadata_label": "Percent!!OCCUPANTS PER ROOM!!Occupied housing units!!1.01 to 1.50"
+    },
+    "housing_crowded_1_51_plus_pct": {
+      "source_code": "DP04_0079PE",
+      "metadata_label": "Percent!!OCCUPANTS PER ROOM!!Occupied housing units!!1.51 or more"
+    },
+    "housing_rent_30_to_34_9_pct": {
+      "source_code": "DP04_0141PE",
+      "metadata_label": "Percent!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!30.0 to 34.9 percent"
+    },
+    "housing_rent_35_plus_pct": {
+      "source_code": "DP04_0142PE",
+      "metadata_label": "Percent!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!35.0 percent or more"
+    }
+  },
+  "DP05": {},
+  "S0101": {
+    "population_total": {
+      "source_code": "S0101_C01_001E",
+      "metadata_label": "Estimate!!Total!!Total population"
+    },
+    "median_age_years": {
+      "source_code": "S0101_C01_032E",
+      "metadata_label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Median age (years)"
+    },
+    "female_pct": {
+      "source_code": "S0101_C06_001E",
+      "metadata_label": "Estimate!!Percent Female!!Total population"
+    }
+  },
+  "S1501": {
+    "education_high_school_pct": {
+      "source_code": "S1501_C02_009E",
+      "metadata_label": "Estimate!!Percent!!AGE BY EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate (includes equivalency)"
+    },
+    "education_college_pct": {
+      "source_code": "S1501_C02_010E",
+      "metadata_label": "Estimate!!Percent!!AGE BY EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Some college, no degree"
+    },
+    "education_bachelors_or_higher_pct": {
+      "source_code": "S1501_C02_015E",
+      "metadata_label": "Estimate!!Percent!!AGE BY EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree or higher"
+    }
+  },
+  "S1701": {
+    "poverty_pct": {
+      "source_code": "S1701_C03_001E",
+      "metadata_label": "Estimate!!Percent below poverty level!!Population for whom poverty status is determined"
+    }
+  },
+  "S1901": {
+    "median_household_income": {
+      "source_code": "S1901_C01_012E",
+      "metadata_label": "Estimate!!Households!!Median income (dollars)"
+    }
+  }
+}
