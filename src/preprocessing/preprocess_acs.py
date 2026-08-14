@@ -4,12 +4,27 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import zipfile
 from pathlib import Path
+from typing import BinaryIO
 
 import pandas as pd
 
 
 TABLES = ("DP02", "DP03", "DP04", "DP05", "S0101", "S1501", "S1701", "S1901")
+COUNTY_GEOID_PATTERN = re.compile(r"^0500000US\d{5}$")
+EXPECTED_COUNTY_ROWS = 3222
+ZIP_FILENAMES = {
+    "DP02": "ACSDP5Y2024.DP02_2026-08-14T102208.zip",
+    "DP03": "ACSDP5Y2024.DP03_2026-08-14T100149.zip",
+    "DP04": "ACSDP5Y2024.DP04_2026-08-14T103221.zip",
+    "DP05": "ACSDP5Y2024.DP05_2026-08-14T103538.zip",
+    "S0101": "ACSST5Y2024.S0101_2026-08-14T104130.zip",
+    "S1501": "ACSST5Y2024.S1501_2026-08-14T104417.zip",
+    "S1701": "ACSST5Y2024.S1701_2026-08-14T104646.zip",
+    "S1901": "ACSST5Y2024.S1901_2026-08-14T105139.zip",
+}
 # Only documented source variables used by src.features.acs_features are retained.
 COMPONENTS = {
     "education_less_than_9th_pct": ("DP02", "DP02_0060PE"),
@@ -59,6 +74,108 @@ def read_metadata(path: Path) -> dict[str, str]:
     return dict(zip(metadata["Column Name"], metadata["Label"], strict=True))
 
 
+def selected_components(table: str) -> dict[str, str]:
+    """Return only the verified components for one ACS table."""
+    return {alias: code for alias, (component_table, code) in COMPONENTS.items() if component_table == table}
+
+
+def discover_zip_inputs(source_dir: str | Path) -> dict[str, Path]:
+    """Locate only the eight exact, verified ACS ZIP filenames."""
+    source_dir = Path(source_dir)
+    discovered: dict[str, Path] = {}
+    for table in TABLES:
+        source_zip = source_dir / ZIP_FILENAMES[table]
+        if not source_zip.is_file():
+            raise FileNotFoundError(f"Required ACS ZIP is missing: {source_zip}")
+        discovered[table] = source_zip
+    return discovered
+
+
+def _single_zip_member(archive: zipfile.ZipFile, suffix: str, source_zip: Path) -> zipfile.ZipInfo:
+    matches = [info for info in archive.infolist() if not info.is_dir() and info.filename.endswith(suffix)]
+    if len(matches) != 1:
+        raise ValueError(f"{source_zip} must contain exactly one {suffix}; found {len(matches)}")
+    return matches[0]
+
+
+def zip_members(source_zip: str | Path, table: str) -> tuple[zipfile.ZipInfo, zipfile.ZipInfo]:
+    """Validate a ZIP and locate its table-specific Data and Metadata CSVs."""
+    source_zip = Path(source_zip)
+    try:
+        with zipfile.ZipFile(source_zip) as archive:
+            if archive.testzip() is not None:
+                raise ValueError(f"ZIP integrity check failed for {source_zip}")
+            return (
+                _single_zip_member(archive, f"{table}-Data.csv", source_zip),
+                _single_zip_member(archive, f"{table}-Column-Metadata.csv", source_zip),
+            )
+    except zipfile.BadZipFile as exc:
+        raise ValueError(f"Invalid ZIP archive: {source_zip}") from exc
+
+
+def _read_metadata(source: Path | BinaryIO) -> dict[str, str]:
+    metadata = pd.read_csv(source, dtype="string")
+    required = {"Column Name", "Label"}
+    if not required.issubset(metadata.columns):
+        raise ValueError(f"Metadata lacks {sorted(required)}")
+    return dict(zip(metadata["Column Name"], metadata["Label"], strict=True))
+
+
+def validate_county_geoids(frame: pd.DataFrame, table: str) -> None:
+    """Require unique, complete county GEO_IDs in the verified format and count."""
+    if "GEO_ID" not in frame.columns:
+        raise ValueError(f"{table} lacks GEO_ID")
+    geoids = frame["GEO_ID"].astype("string").str.strip()
+    if geoids.isna().any() or geoids.eq("").any():
+        raise ValueError(f"{table} has missing GEO_ID")
+    if not geoids.str.fullmatch(COUNTY_GEOID_PATTERN.pattern, na=False).all():
+        raise ValueError(f"{table} has invalid county GEO_ID")
+    if geoids.duplicated().any():
+        raise ValueError(f"{table} has duplicate GEO_ID")
+    if len(frame) != EXPECTED_COUNTY_ROWS:
+        raise ValueError(f"{table} must contain exactly {EXPECTED_COUNTY_ROWS} county records; found {len(frame)}")
+
+
+def read_zip_table(source_zip: str | Path, table: str) -> tuple[pd.DataFrame, dict[str, str], int]:
+    """Read Data and Metadata CSVs directly from a ZIP without extracting them."""
+    source_zip = Path(source_zip)
+    zip_members(source_zip, table)
+    with zipfile.ZipFile(source_zip) as archive:
+        data_member = _single_zip_member(archive, f"{table}-Data.csv", source_zip)
+        metadata_member = _single_zip_member(archive, f"{table}-Column-Metadata.csv", source_zip)
+        with archive.open(data_member) as data_file:
+            raw = pd.read_csv(data_file, dtype="string", keep_default_na=False)
+        with archive.open(metadata_member) as metadata_file:
+            labels = _read_metadata(metadata_file)
+    return raw, labels, len(raw)
+
+
+def clean_county_table(raw: pd.DataFrame, labels: dict[str, str], table: str) -> tuple[pd.DataFrame, dict[str, dict[str, str]]]:
+    """Remove only the Census export-label row and select verified county features."""
+    if not {"GEO_ID", "NAME"}.issubset(raw.columns):
+        raise ValueError(f"{table} lacks GEO_ID/NAME")
+    raw = raw.loc[raw["GEO_ID"].astype("string").str.strip().ne("Geography")].copy()
+    raw["GEO_ID"] = raw["GEO_ID"].astype("string").str.strip()
+    raw["NAME"] = raw["NAME"].astype("string").str.strip()
+    validate_county_geoids(raw, table)
+
+    selected = selected_components(table)
+    missing = sorted(set(selected.values()) - set(raw.columns))
+    if missing:
+        raise ValueError(f"{table} missing selected source columns: {missing}")
+
+    cleaned = raw[["GEO_ID", "NAME"]].copy()
+    cleaned["county_fips"] = cleaned["GEO_ID"].str.removeprefix("0500000US")
+    mapping: dict[str, dict[str, str]] = {}
+    for alias, code in selected.items():
+        label = labels.get(code)
+        if not label:
+            raise ValueError(f"{table} metadata has no label for {code}")
+        cleaned[alias] = clean_numeric(raw[code])
+        mapping[alias] = {"source_code": code, "metadata_label": label}
+    return cleaned, mapping
+
+
 def table_paths(source_dir: Path, table: str) -> tuple[Path, Path]:
     data = list(source_dir.glob(f"*{table}-Data.csv"))
     metadata = list(source_dir.glob(f"*{table}-Column-Metadata.csv"))
@@ -102,15 +219,51 @@ def read_and_clean_table(data_path: Path, metadata_path: Path, table: str) -> tu
     return cleaned, mapping
 
 
-def preprocess_acs(source_dir: str | Path, output_dir: str | Path) -> dict[str, dict[str, dict[str, str]]]:
-    source_dir, output_dir = Path(source_dir), Path(output_dir)
+def preprocess_acs(
+    source_dir: str | Path = "data/raw/acs",
+    output_dir: str | Path = "data/interim/acs_clean",
+    processed_dir: str | Path = "data/processed",
+) -> dict[str, dict[str, dict[str, str]]]:
+    """Create county ACS tables directly from the eight supplied ZIP archives."""
+    source_dir, output_dir, processed_dir = Path(source_dir), Path(output_dir), Path(processed_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    processed_dir.mkdir(parents=True, exist_ok=True)
+    zip_paths = discover_zip_inputs(source_dir)
     manifest: dict[str, dict[str, dict[str, str]]] = {}
+    validation_rows: list[dict[str, object]] = []
+    county_features: pd.DataFrame | None = None
+
     for table in TABLES:
-        data_path, metadata_path = table_paths(source_dir, table)
-        cleaned, mapping = read_and_clean_table(data_path, metadata_path, table)
+        raw, labels, raw_rows = read_zip_table(zip_paths[table], table)
+        cleaned, mapping = clean_county_table(raw, labels, table)
         cleaned.to_csv(output_dir / f"{table.lower()}_clean.csv", index=False)
         manifest[table] = mapping
+        feature_columns = list(mapping)
+        feature_frame = cleaned[["county_fips", *feature_columns]]
+        county_features = (
+            feature_frame
+            if county_features is None
+            else county_features.merge(feature_frame, on="county_fips", how="outer", validate="one_to_one")
+        )
+        validation_rows.append({
+            "table": table,
+            "source_zip": zip_paths[table].name,
+            "raw_rows": raw_rows,
+            "data_rows": len(cleaned),
+            "selected_features": len(feature_columns),
+            "missing_features": "",
+            "invalid_geoids": 0,
+            "duplicate_geoids": 0,
+            "missing_geoids": 0,
+            "county_count": cleaned["county_fips"].nunique(),
+            "status": "valid",
+        })
+
+    assert county_features is not None
+    if len(county_features) != EXPECTED_COUNTY_ROWS or county_features["county_fips"].isna().any():
+        raise ValueError("ACS county feature merge did not preserve the validated county key set")
+    county_features.to_csv(processed_dir / "acs_features.csv", index=False)
+    pd.DataFrame(validation_rows).to_csv(processed_dir / "acs_validation_report.csv", index=False)
     (output_dir / "metadata_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return manifest
 
@@ -119,9 +272,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Clean selected ACS 2024 variables from metadata.")
     parser.add_argument("--source-dir", type=Path, default=Path("data/raw/acs"))
     parser.add_argument("--output-dir", type=Path, default=Path("data/interim/acs_clean"))
+    parser.add_argument("--processed-dir", type=Path, default=Path("data/processed"))
     args = parser.parse_args()
-    manifest = preprocess_acs(args.source_dir, args.output_dir)
-    print(f"Processed {len(manifest)} ACS tables into {args.output_dir}")
+    manifest = preprocess_acs(args.source_dir, args.output_dir, args.processed_dir)
+    print(f"Processed {len(manifest)} county ACS tables from ZIP inputs")
 
 
 if __name__ == "__main__":
