@@ -24,6 +24,10 @@ def test_preprocess_synthea_creates_reproducible_member_file_and_report(tmp_path
             "CITY": ["Boston", None, None, "Cambridge"],
             "STATE": ["Massachusetts", "Massachusetts", "Massachusetts", "Massachusetts"],
             "ZIP": ["02108", None, None, "02139"],
+            "COUNTY": ["Suffolk County", None, None, "Middlesex County"],
+            "FIPS": ["25025", None, None, "25017"],
+            "LAT": ["42.3601", None, None, "42.3736"],
+            "LON": ["-71.0589", None, None, "-71.1097"],
         }
     ).to_csv(source_dir / "patients.csv", index=False)
     output_path = tmp_path / "interim" / "members.csv"
@@ -33,10 +37,13 @@ def test_preprocess_synthea_creates_reproducible_member_file_and_report(tmp_path
 
     assert find_patient_table(source_dir).name == "patients.csv"
     assert cleaned.columns.tolist() == [
-        "member_id", "birthdate", "age", "gender", "race", "ethnicity", "marital_status", "city", "state", "zip"
+        "member_id", "birthdate", "age", "gender", "race", "ethnicity", "marital_status", "city", "state", "zip", "county", "fips", "county_fips", "lat", "lon"
     ]
     assert cleaned["member_id"].tolist() == ["a", "b"]
     assert cleaned.loc[cleaned["member_id"] == "a", "age"].item() == 24
+    first_member = cleaned.loc[cleaned["member_id"] == "a"].iloc[0]
+    assert first_member[["fips", "zip", "county", "lat", "lon"]].tolist() == ["25025", "02108", "Suffolk County", "42.3601", "-71.0589"]
+    assert first_member["county_fips"] == "25025"
     assert pd.isna(cleaned.loc[cleaned["member_id"] == "b", "birthdate"].item())
     assert report["invalid_dates_in_source"] == 1
     assert report["duplicate_member_ids_in_source"] == 1

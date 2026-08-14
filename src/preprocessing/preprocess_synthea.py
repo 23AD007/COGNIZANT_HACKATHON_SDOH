@@ -10,6 +10,8 @@ from typing import Any
 
 import pandas as pd
 
+from src.preprocessing.county_geography import normalize_county_fips_series
+
 
 DEFAULT_REFERENCE_DATE = "2025-01-01"
 MAX_VALID_AGE = 120
@@ -24,6 +26,11 @@ MEMBER_COLUMNS = [
     "city",
     "state",
     "zip",
+    "county",
+    "fips",
+    "county_fips",
+    "lat",
+    "lon",
 ]
 REQUIRED_PATIENT_COLUMNS = {"id", "birthdate", "gender", "race", "ethnicity"}
 
@@ -83,7 +90,7 @@ def build_validation_report(
     reference_date: pd.Timestamp,
 ) -> dict[str, Any]:
     """Build a JSON-serializable validation report for the cleaned member file."""
-    geography_columns = ["city", "state", "zip"]
+    geography_columns = ["city", "state", "zip", "county", "fips", "county_fips", "lat", "lon"]
     return {
         "reference_date": reference_date.date().isoformat(),
         "source": "Synthea patient/member table",
@@ -147,10 +154,17 @@ def preprocess_synthea(
         ("city", "city"),
         ("state", "state"),
         ("zip", "zip"),
+        ("county", "county"),
+        ("fips", "fips"),
+        ("lat", "lat"),
+        ("lon", "lon"),
     ]:
         cleaned[target_column] = clean_text(raw[source_column]) if source_column in raw else pd.Series(pd.NA, index=raw.index, dtype="string")
 
     cleaned["age"] = calculate_age(cleaned["birthdate"], reference_timestamp)
+    # Preserve the raw Synthea FIPS field and expose a separately normalized
+    # county key for county-level joins. This never assigns or derives a tract.
+    cleaned["county_fips"] = normalize_county_fips_series(cleaned["fips"])
     invalid_age = cleaned["age"].isna() | (cleaned["age"] < 0) | (cleaned["age"] > MAX_VALID_AGE)
     invalid_age_count = int(invalid_age.sum())
     cleaned.loc[invalid_age, "age"] = pd.NA

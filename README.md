@@ -30,3 +30,9 @@ pip install -r requirements.txt
 ```
 
 Raw datasets must remain unchanged. Derived data belongs only in `data/interim/` or `data/processed/`.
+
+## Geographic integration status
+
+Synthea currently provides member-level county FIPS where available, ZIP, city, state, county, and coordinates. The supplied ACS 2024 tables are national-level, while SRAM is tract-level. No legitimate Synthea member-to-tract crosswalk is present, so geographic joins are intentionally blocked.
+
+Before an ACS-to-SRAM or member-to-tract join can be written, add: (1) legitimate tract-level 2024 ACS data with `GEO_ID` values in the `1400000US` tract form, and (2) a legitimate Synthea member-to-tract mapping/crosswalk.

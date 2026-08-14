@@ -51,13 +51,23 @@ SRAM_FEATURE_COLUMNS = [
 
 def preprocess_sram(input_path, output_path):
 
+    input_path = Path(input_path)
+    output_path = Path(output_path)
+
+    if not input_path.exists():
+        raise FileNotFoundError(
+            f"SRAM file not found: {input_path}"
+        )
+
     df = pd.read_csv(
         input_path,
         low_memory=False
     )
 
     if df.empty:
-        raise ValueError("SRAM file is empty.")
+        raise ValueError(
+            "SRAM file is empty."
+        )
 
     required = (
         REQUIRED_COLUMNS
@@ -71,33 +81,25 @@ def preprocess_sram(input_path, output_path):
 
     if missing:
         raise ValueError(
-            f"Missing SRAM columns: {missing}"
+            "Missing SRAM columns:\n"
+            + "\n".join(missing)
         )
 
     df = df[required].copy()
 
-    # Census tract is the primary SRAM geographic key
+    # --------------------------------------------------
+    # Geographic key
+    # --------------------------------------------------
+
     df["CensusTract20"] = (
         df["CensusTract20"]
         .astype("string")
         .str.strip()
-    )
-
-    # Numeric conversion
-    numeric_columns = [
-        col for col in df.columns
-        if col != "CensusTract20"
-    ]
-
-    for col in numeric_columns:
-        df[col] = pd.to_numeric(
-            df[col],
-            errors="coerce"
+        .str.replace(
+            r"\.0$",
+            "",
+            regex=True
         )
-
-    # Remove duplicate tract records
-    df = df.drop_duplicates(
-        subset="CensusTract20"
     )
 
     if df["CensusTract20"].isna().any():
@@ -105,7 +107,69 @@ def preprocess_sram(input_path, output_path):
             "SRAM contains missing CensusTract20 values."
         )
 
-    output_path = Path(output_path)
+    if not df["CensusTract20"].is_unique:
+        duplicates = (
+            df["CensusTract20"]
+            .duplicated()
+            .sum()
+        )
+
+        print(
+            f"Removing {duplicates} duplicate "
+            "CensusTract20 records."
+        )
+
+        df = df.drop_duplicates(
+            subset="CensusTract20",
+            keep="first"
+        )
+
+    # --------------------------------------------------
+    # Numeric fields
+    # --------------------------------------------------
+
+    numeric_columns = [
+        c for c in df.columns
+        if c != "CensusTract20"
+    ]
+
+    for col in numeric_columns:
+
+        df[col] = pd.to_numeric(
+            df[col],
+            errors="coerce"
+        )
+
+    # --------------------------------------------------
+    # Basic range validation
+    # --------------------------------------------------
+
+    rate_columns = [
+        "PovertyRate"
+    ]
+
+    for col in rate_columns:
+
+        if col in df.columns:
+
+            invalid = (
+                df[col].notna()
+                & (
+                    (df[col] < 0)
+                    | (df[col] > 100)
+                )
+            )
+
+            if invalid.any():
+                raise ValueError(
+                    f"{col} contains values "
+                    "outside 0-100."
+                )
+
+    # --------------------------------------------------
+    # Save
+    # --------------------------------------------------
+
     output_path.parent.mkdir(
         parents=True,
         exist_ok=True
@@ -117,7 +181,8 @@ def preprocess_sram(input_path, output_path):
     )
 
     print(
-        f"Processed SRAM tracts: {len(df):,}"
+        f"Processed SRAM tracts: "
+        f"{len(df):,}"
     )
 
     print(
