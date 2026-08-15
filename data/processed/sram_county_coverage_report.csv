@@ -1,0 +1,2 @@
+tract_rows,unique_counties,missing_county_fips,duplicate_county_level_records,counties_with_sram_data,omitted_ambiguous_columns,missing_county_fips_handling
+84119,3143,0,0,3143,poverty_rate_pct;driving_low_access_population_beyond_1mi_pct;straight_low_access_population_beyond_1mi_pct,Excluded from county table and counted in this report; not silently discarded.

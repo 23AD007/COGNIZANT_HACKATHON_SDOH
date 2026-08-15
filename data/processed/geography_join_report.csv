@@ -1,0 +1,6 @@
+dataset,key,total_geographic_records,matched_records,unmatched_records,duplicate_keys,missing_keys
+acs,county_fips,1,0,1,0,1
+places,county_fips,2957,0,2957,0,0
+county_features,county_fips,2958,0,2958,0,1
+sram,tract_geoid,84119,84119,0,0,0
+tract_features,tract_geoid,84119,84119,0,0,0

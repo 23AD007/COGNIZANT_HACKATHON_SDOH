@@ -1,0 +1,8 @@
+metric,value
+members,108
+emergency_any,71
+inpatient_any,31
+acute_any,76
+acute_2plus,53
+total_emergency_encounters,191
+total_inpatient_encounters,55
