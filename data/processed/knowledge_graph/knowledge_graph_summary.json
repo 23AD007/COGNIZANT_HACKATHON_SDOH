@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "node_count": 2246,
+  "edge_count": 3407,
+  "node_types": {
+    "ClinicalFactor": 1910,
+    "MEMBER": 108,
+    "RiskAssessment": 108,
+    "Evidence": 40,
+    "SDOH_FACTOR": 40,
+    "CountyRiskAssessment": 13,
+    "COUNTY": 13,
+    "SDOH_DOMAIN": 8,
+    "INTERVENTION": 6
+  },
+  "relationship_types": {
+    "HAS_CLINICAL_CONTEXT": 1910,
+    "HAS_SDOH_FACTOR": 1114,
+    "HAS_RISK_ASSESSMENT": 121,
+    "LIVES_IN": 87,
+    "RECEIVES_INTERVENTION_RECOMMENDATION": 87,
+    "BELONGS_TO_DOMAIN": 42,
+    "SUPPORTED_BY": 40,
+    "ADDRESSES_DOMAIN": 6
+  }
+}
