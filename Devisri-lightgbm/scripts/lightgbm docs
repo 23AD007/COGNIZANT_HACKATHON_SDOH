@@ -1,0 +1,340 @@
+# LightGBM Model – Final Documentation
+
+## 1. Objective
+
+The objective of the LightGBM model is to **predict whether a member is likely to experience an inpatient hospitalization** based on their clinical outcome and SDOH-related characteristics.
+
+The model is part of the **SDOH-driven Member Risk & Intervention Prioritization System**.
+
+The output helps the care manager identify members who may require additional attention and intervention.
+
+---
+
+## 2. Datasets Used
+
+Two processed datasets were used.
+
+### A. `member_sdoh_model_features.csv`
+
+This dataset contains member-level SDOH and demographic features such as:
+
+* Age
+* Education
+* Poverty
+* Unemployment
+* Public assistance
+* Household income
+* Uninsured percentage
+* Healthcare access
+* Broadband/digital access
+* Housing conditions
+* Transportation access
+* Food access
+* Chronic disease indicators
+* Physical and mental health indicators
+
+### B. `member_clinical_target.csv`
+
+This dataset contains the clinical outcome used as the target.
+
+Selected target:
+
+```text
+target_inpatient_any
+```
+
+Meaning:
+
+```text
+1 → Member experienced at least one inpatient encounter
+0 → Member did not experience an inpatient encounter
+```
+
+---
+
+# 3. Data Preparation
+
+The two datasets were joined using the member identifier.
+
+```text
+member_sdoh_model_features.member_id
+                ↓
+member_clinical_target.patient_id
+```
+
+After merging:
+
+```text
+Final dataset: 108 members
+Total columns: 50
+```
+
+The following columns were not used as model predictors:
+
+```text
+member_id
+county_fips
+target_inpatient_any
+```
+
+The remaining **47 features** were used for model training.
+
+---
+
+# 4. Target Distribution
+
+The target distribution was:
+
+| Target           | Members | Percentage |
+| ---------------- | ------: | ---------: |
+| 0 – No inpatient |      77 |     71.30% |
+| 1 – Inpatient    |      31 |     28.70% |
+| **Total**        | **108** |   **100%** |
+
+This shows that the dataset is somewhat imbalanced because there are more members without inpatient hospitalization.
+
+Therefore, class imbalance was considered during model development.
+
+---
+
+# 5. Baseline LightGBM Model
+
+Initially, a standard LightGBM binary classification model was trained.
+
+The baseline model used:
+
+```text
+Objective       : Binary classification
+Estimators      : 200
+Learning Rate   : 0.05
+Num Leaves      : 15
+Max Depth       : 4
+Min Child Samples: 10
+Class Weight    : Balanced
+Random State    : 42
+```
+
+The dataset was divided into:
+
+```text
+Training : 86 members
+Testing  : 22 members
+```
+
+---
+
+# 6. Baseline Model Result
+
+The first LightGBM model produced:
+
+| Metric    | Result |
+| --------- | -----: |
+| Accuracy  |  0.545 |
+| Precision |  0.000 |
+| Recall    |  0.000 |
+| F1 Score  |  0.000 |
+| ROC-AUC   |  0.307 |
+
+The model failed to identify the positive inpatient class effectively.
+
+Therefore, **the baseline model was not suitable for the final system**.
+
+---
+
+# 7. Why We Improved the Model
+
+The baseline result showed that simply using a standard LightGBM configuration was not enough.
+
+We therefore tested multiple LightGBM configurations:
+
+1. **LightGBM Conservative**
+2. **LightGBM Balanced**
+3. **LightGBM Regularized**
+
+The purpose was to find a configuration that handled the small dataset and class imbalance better.
+
+---
+
+# 8. Improved LightGBM Models
+
+### Model 1 – Conservative
+
+Results:
+
+```text
+ROC-AUC  : 0.8508
+PR-AUC   : 0.6714
+F1       : 0.6260
+Recall   : 0.76
+Precision: 0.544
+```
+
+### Model 2 – Balanced
+
+Results:
+
+```text
+ROC-AUC  : 0.8299
+PR-AUC   : 0.6491
+F1       : 0.5594
+Recall   : 0.60
+Precision: 0.549
+```
+
+### Model 3 – Regularized
+
+Results:
+
+```text
+ROC-AUC  : 0.8641
+PR-AUC   : 0.6869
+F1       : 0.7286
+Recall   : 0.92
+Precision: 0.619
+```
+
+---
+
+# 9. Selected Model
+
+The best model was:
+
+```text
+LightGBM_Regularized
+```
+
+because it achieved the highest:
+
+* ROC-AUC
+* PR-AUC
+* F1 Score
+* Recall
+
+Comparison:
+
+| Model           |    ROC-AUC |     PR-AUC |         F1 |   Recall | Precision |
+| --------------- | ---------: | ---------: | ---------: | -------: | --------: |
+| **Regularized** | **0.8641** | **0.6869** | **0.7286** | **0.92** | **0.619** |
+| Conservative    |     0.8508 |     0.6714 |     0.6260 |     0.76 |     0.544 |
+| Balanced        |     0.8299 |     0.6491 |     0.5594 |     0.60 |     0.549 |
+
+Therefore:
+
+> **LightGBM Regularized was selected as the best configuration for the project.**
+
+---
+
+# 10. Important Features
+
+The final LightGBM model identified the following important features:
+
+| Rank | Feature                            |
+| ---: | ---------------------------------- |
+|    1 | Age                                |
+|    2 | Mean commute minutes               |
+|    3 | Median household income            |
+|    4 | Education – college percentage     |
+|    5 | Places obesity percentage          |
+|    6 | Routine checkup percentage         |
+|    7 | Education – high school percentage |
+|    8 | Housing vacancy                    |
+|    9 | Asthma percentage                  |
+|   10 | Cholesterol screening percentage   |
+
+This provides useful information about **which demographic, socioeconomic, healthcare-access and health-related factors influence the model's predictions**.
+
+---
+
+# 11. Model Outputs
+
+The trained model is saved as:
+
+```text
+models/lightgbm_model.txt
+```
+
+Prediction results:
+
+```text
+outputs/lightgbm_predictions.csv
+```
+
+Feature importance:
+
+```text
+outputs/lightgbm_feature_importance.csv
+```
+
+Model comparison:
+
+```text
+outputs/lightgbm_model_comparison.csv
+```
+
+Evaluation metrics:
+
+```text
+outputs/lightgbm_metrics.csv
+```
+
+---
+
+# 12. How LightGBM Fits Into Our Project
+
+The LightGBM model acts as the **member risk prediction component**.
+
+The overall flow is:
+
+```text
+Member SDOH Data
+       +
+Clinical Data
+       ↓
+Data Preprocessing
+       ↓
+LightGBM Risk Model
+       ↓
+Risk Prediction / Probability
+       ↓
+Member Risk Profile
+       ↓
+Care Manager Dashboard
+       ↓
+Intervention Recommendation
+```
+
+Example:
+
+```text
+Member ID: fc2d1fb9
+        ↓
+SDOH + Demographic Features
+        ↓
+LightGBM
+        ↓
+Risk Probability
+        ↓
+High-Risk Member
+        ↓
+Care Manager Review
+```
+
+---
+
+# 13. Final Conclusion
+
+The initial LightGBM model performed poorly, with **ROC-AUC = 0.307 and F1 = 0**.
+
+After testing different configurations and applying a more suitable **regularized LightGBM approach**, the best configuration achieved:
+
+```text
+ROC-AUC : 0.8641
+PR-AUC  : 0.6869
+F1      : 0.7286
+Recall  : 0.92
+Precision: 0.619
+```
+
+Therefore, **LightGBM Regularized is the selected classification model** for predicting inpatient-risk outcomes from member-level SDOH features.
+
+> **Important:** Because the dataset contains only 108 members, these metrics should be treated as a prototype result rather than evidence of production-level performance. Further validation with a larger dataset would be required before deployment.
