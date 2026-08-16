@@ -1,0 +1,608 @@
+from pathlib import Path
+
+import pandas as pd
+import numpy as np
+
+from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
+from sklearn.ensemble import RandomForestClassifier
+
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    confusion_matrix,
+    classification_report,
+    roc_auc_score,
+    ConfusionMatrixDisplay
+)
+
+import matplotlib.pyplot as plt
+import joblib
+
+
+# ============================================================
+# 1. PROJECT PATH
+# ============================================================
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATA_FILE = (
+    BASE_DIR
+    / "data"
+    / "processed"
+    / "county_features.csv"
+)
+
+
+# ============================================================
+# 2. LOAD DATA
+# ============================================================
+
+print("=" * 60)
+print("LOADING DATASET")
+print("=" * 60)
+
+df = pd.read_csv(DATA_FILE)
+
+print("Rows:", df.shape[0])
+print("Columns:", df.shape[1])
+
+
+# ============================================================
+# 3. SELECT SDOH FEATURES
+# ============================================================
+
+FEATURES = [
+    "poverty_pct",
+    "unemployment_pct",
+    "median_household_income",
+    "public_assistance_pct",
+    "uninsured_pct",
+
+    "education_less_than_high_school_pct",
+    "education_high_school_pct",
+    "education_college_pct",
+    "education_bachelors_or_higher_pct",
+
+    "housing_renter_pct",
+    "housing_cost_burden_30pct_or_more",
+    "housing_crowded_pct",
+    "housing_vacancy_pct",
+    "housing_no_vehicle_pct",
+
+    "transport_no_vehicle_pct",
+    "mean_commute_minutes",
+
+    "digital_no_computer_pct",
+    "digital_no_broadband_pct",
+
+    "population_total",
+    "median_age_years",
+    "female_pct",
+
+    "places_asthma_pct",
+    "places_copd_pct",
+    "places_diabetes_pct",
+    "places_heart_disease_pct",
+    "places_obesity_pct",
+    "places_physical_inactivity_pct",
+    "places_poor_mental_health_pct",
+    "places_poor_physical_health_pct",
+    "places_smoking_pct",
+    "places_stroke_pct",
+    "places_uninsured_pct"
+]
+
+
+# Keep only features that actually exist
+FEATURES = [
+    column
+    for column in FEATURES
+    if column in df.columns
+]
+
+print("\nNumber of selected features:", len(FEATURES))
+
+print("\nSelected features:")
+for feature in FEATURES:
+    print(" -", feature)
+
+
+# ============================================================
+# 4. CONVERT FEATURES TO NUMERIC
+# ============================================================
+
+X = df[FEATURES].copy()
+
+for column in X.columns:
+    X[column] = pd.to_numeric(
+        X[column],
+        errors="coerce"
+    )
+
+
+# ============================================================
+# 5. REMOVE COMPLETELY EMPTY COLUMNS
+# ============================================================
+
+empty_columns = [
+    column
+    for column in X.columns
+    if X[column].isna().all()
+]
+
+if empty_columns:
+
+    print("\nRemoving completely empty columns:")
+
+    for column in empty_columns:
+        print(" -", column)
+
+    X = X.drop(
+        columns=empty_columns
+    )
+
+
+# ============================================================
+# 6. CREATE DEMONSTRATION TARGET
+# ============================================================
+#
+# IMPORTANT:
+# This is NOT an actual healthcare outcome.
+#
+# It creates a binary county risk label using several SDOH
+# indicators so that the Random Forest pipeline can run.
+#
+# 1 = higher SDOH risk
+# 0 = lower SDOH risk
+#
+# Replace this target later with your real utilization target.
+# ============================================================
+
+risk_score = pd.Series(
+    0.0,
+    index=df.index
+)
+
+risk_count = pd.Series(
+    0,
+    index=df.index
+)
+
+
+def add_risk(feature, high_risk_threshold):
+
+    global risk_score
+    global risk_count
+
+    if feature in df.columns:
+
+        values = pd.to_numeric(
+            df[feature],
+            errors="coerce"
+        )
+
+        valid = values.notna()
+
+        risk_score.loc[valid] += (
+            values.loc[valid] > high_risk_threshold
+        ).astype(int)
+
+        risk_count.loc[valid] += 1
+
+
+# SDOH risk indicators
+add_risk("poverty_pct", 20)
+add_risk("unemployment_pct", 7)
+add_risk("uninsured_pct", 15)
+add_risk("digital_no_broadband_pct", 20)
+add_risk("housing_cost_burden_30pct_or_more", 30)
+add_risk("places_obesity_pct", 35)
+add_risk("places_diabetes_pct", 12)
+add_risk("places_smoking_pct", 20)
+add_risk("places_physical_inactivity_pct", 30)
+
+
+# Require at least one valid risk feature
+valid_target = risk_count > 0
+
+y = pd.Series(
+    np.nan,
+    index=df.index
+)
+
+y.loc[valid_target] = (
+    risk_score.loc[valid_target]
+    >= 3
+).astype(int)
+
+
+# ============================================================
+# 7. REMOVE ROWS WITHOUT TARGET
+# ============================================================
+
+valid_rows = y.notna()
+
+X = X.loc[valid_rows].copy()
+
+y = y.loc[valid_rows].astype(int)
+
+print("\nFinal dataset:")
+print("Rows:", len(X))
+print("Features:", X.shape[1])
+
+
+# ============================================================
+# 8. CHECK TARGET
+# ============================================================
+
+print("\nTarget distribution:")
+
+print(
+    y.value_counts()
+)
+
+
+# Make sure both classes exist
+if y.nunique() < 2:
+
+    raise ValueError(
+        "Target contains only one class. "
+        "Cannot train a binary Random Forest."
+    )
+
+
+# ============================================================
+# 9. HANDLE MISSING VALUES
+# ============================================================
+
+imputer = SimpleImputer(
+    strategy="median"
+)
+
+X = pd.DataFrame(
+    imputer.fit_transform(X),
+    columns=X.columns,
+    index=X.index
+)
+
+
+# ============================================================
+# 10. TRAIN / TEST SPLIT
+# ============================================================
+
+X_train, X_test, y_train, y_test = train_test_split(
+
+    X,
+    y,
+
+    test_size=0.20,
+
+    random_state=42,
+
+    stratify=y
+)
+
+
+print("\nTraining rows:", len(X_train))
+print("Testing rows:", len(X_test))
+
+
+# ============================================================
+# 11. CREATE RANDOM FOREST
+# ============================================================
+
+model = RandomForestClassifier(
+
+    n_estimators=300,
+
+    max_depth=10,
+
+    min_samples_split=5,
+
+    min_samples_leaf=2,
+
+    class_weight="balanced",
+
+    random_state=42,
+
+    n_jobs=-1
+)
+
+
+# ============================================================
+# 12. TRAIN
+# ============================================================
+
+print("\n" + "=" * 60)
+print("TRAINING RANDOM FOREST")
+print("=" * 60)
+
+model.fit(
+    X_train,
+    y_train
+)
+
+print("Training completed!")
+
+
+# ============================================================
+# 13. PREDICT
+# ============================================================
+
+y_pred = model.predict(
+    X_test
+)
+
+y_probability = model.predict_proba(
+    X_test
+)[:, 1]
+
+
+# ============================================================
+# 14. MODEL METRICS
+# ============================================================
+
+accuracy = accuracy_score(
+    y_test,
+    y_pred
+)
+
+precision = precision_score(
+    y_test,
+    y_pred,
+    zero_division=0
+)
+
+recall = recall_score(
+    y_test,
+    y_pred,
+    zero_division=0
+)
+
+f1 = f1_score(
+    y_test,
+    y_pred,
+    zero_division=0
+)
+
+roc_auc = roc_auc_score(
+    y_test,
+    y_probability
+)
+
+
+print("\n" + "=" * 60)
+print("RANDOM FOREST MODEL RESULTS")
+print("=" * 60)
+
+print(
+    f"Accuracy  : {accuracy:.4f}"
+)
+
+print(
+    f"Precision : {precision:.4f}"
+)
+
+print(
+    f"Recall    : {recall:.4f}"
+)
+
+print(
+    f"F1 Score  : {f1:.4f}"
+)
+
+print(
+    f"ROC-AUC   : {roc_auc:.4f}"
+)
+
+
+# ============================================================
+# 15. CLASSIFICATION REPORT
+# ============================================================
+
+print("\n" + "=" * 60)
+print("CLASSIFICATION REPORT")
+print("=" * 60)
+
+print(
+    classification_report(
+        y_test,
+        y_pred,
+        target_names=[
+            "Low SDOH Risk",
+            "High SDOH Risk"
+        ],
+        zero_division=0
+    )
+)
+
+
+# ============================================================
+# 16. CONFUSION MATRIX
+# ============================================================
+
+cm = confusion_matrix(
+    y_test,
+    y_pred
+)
+
+print("\n" + "=" * 60)
+print("CONFUSION MATRIX")
+print("=" * 60)
+
+print(cm)
+
+
+# ============================================================
+# 17. TN / FP / FN / TP
+# ============================================================
+
+TN = cm[0, 0]
+FP = cm[0, 1]
+FN = cm[1, 0]
+TP = cm[1, 1]
+
+print("\nTrue Negative :", TN)
+print("False Positive:", FP)
+print("False Negative:", FN)
+print("True Positive :", TP)
+
+
+# ============================================================
+# 18. DISPLAY CONFUSION MATRIX
+# ============================================================
+
+display = ConfusionMatrixDisplay(
+
+    confusion_matrix=cm,
+
+    display_labels=[
+        "Low Risk",
+        "High Risk"
+    ]
+)
+
+display.plot()
+
+plt.title(
+    "Random Forest Confusion Matrix"
+)
+
+plt.tight_layout()
+
+plt.show()
+
+
+# ============================================================
+# 19. FEATURE IMPORTANCE
+# ============================================================
+
+importance = pd.DataFrame({
+
+    "Feature": X.columns,
+
+    "Importance":
+        model.feature_importances_
+
+})
+
+importance = importance.sort_values(
+
+    "Importance",
+
+    ascending=False
+
+)
+
+
+print("\n" + "=" * 60)
+print("TOP 15 IMPORTANT FEATURES")
+print("=" * 60)
+
+print(
+    importance.head(15)
+)
+
+
+# ============================================================
+# 20. SAVE MODEL
+# ============================================================
+
+MODEL_DIR = (
+    BASE_DIR /
+    "models"
+)
+
+MODEL_DIR.mkdir(
+    parents=True,
+    exist_ok=True
+)
+
+
+joblib.dump(
+
+    model,
+
+    MODEL_DIR /
+    "random_forest_model.pkl"
+
+)
+
+
+joblib.dump(
+
+    imputer,
+
+    MODEL_DIR /
+    "random_forest_imputer.pkl"
+
+)
+
+
+# ============================================================
+# 21. SAVE FEATURE IMPORTANCE
+# ============================================================
+
+importance.to_csv(
+
+    BASE_DIR /
+    "data" /
+    "processed" /
+    "random_forest_feature_importance.csv",
+
+    index=False
+
+)
+
+
+# ============================================================
+# 22. SAVE CONFUSION MATRIX
+# ============================================================
+
+cm_df = pd.DataFrame(
+
+    cm,
+
+    index=[
+        "Actual Low Risk",
+        "Actual High Risk"
+    ],
+
+    columns=[
+        "Predicted Low Risk",
+        "Predicted High Risk"
+    ]
+
+)
+
+
+cm_df.to_csv(
+
+    BASE_DIR /
+    "data" /
+    "processed" /
+    "confusion_matrix.csv"
+
+)
+
+
+print("\n" + "=" * 60)
+print("MODEL SAVED")
+print("=" * 60)
+
+print(
+    "models/random_forest_model.pkl"
+)
+
+print(
+    "data/processed/random_forest_feature_importance.csv"
+)
+
+print(
+    "data/processed/confusion_matrix.csv"
+)
+
+print("\nRandom Forest training completed successfully!")
