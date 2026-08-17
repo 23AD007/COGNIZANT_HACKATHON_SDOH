@@ -1,0 +1,332 @@
+{
+  "member_id": "1e7909f8-39b2-3c7e-1fda-a6c3256dc061",
+  "graph_member_id": "member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061",
+  "risk_probability": 0.9999193422541974,
+  "risk_band": "Very High",
+  "graph": {
+    "nodes": 2246,
+    "relationships": 3407
+  },
+  "reasoning": {
+    "member_id": "member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061",
+    "risk_probability": 0.9999193422541974,
+    "risk_band": "Very High",
+    "sdoh_factors": [
+      "housing_rent_35_plus_pct",
+      "snap_households_count_sum",
+      "housing_crowded_1_01_to_1_50_pct",
+      "straight_no_vehicle_households_beyond_1mi_count_sum",
+      "places_routine_checkup_pct",
+      "places_obesity_pct",
+      "education_less_than_9th_pct",
+      "driving_low_income_low_access_tract_count",
+      "places_physical_inactivity_pct",
+      "places_copd_pct",
+      "places_cholesterol_screening_pct",
+      "driving_no_vehicle_households_beyond_1mi_count_sum",
+      "places_diabetes_pct",
+      "housing_crowded_1_51_plus_pct",
+      "driving_low_access_population_beyond_1mi_10mi_count_sum",
+      "housing_rent_30_to_34_9_pct",
+      "places_poor_physical_health_pct"
+    ],
+    "sdoh_domains": [
+      "Housing",
+      "Economic Stability",
+      "Transportation",
+      "Healthcare Access",
+      "Neighborhood and Built Environment",
+      "Education Access"
+    ],
+    "clinical_factors": [
+      "clinical_wellness_count",
+      "clinical_unique_condition_description_count",
+      "clinical_unique_condition_count",
+      "clinical_unique_careplan_count",
+      "clinical_condition_count",
+      "clinical_careplan_count",
+      "clinical_ambulatory_count",
+      "clinical_history_days",
+      "clinical_encounter_count"
+    ],
+    "evidence_records": [
+      {
+        "factor": "housing_rent_35_plus_pct",
+        "domain": "housing",
+        "evidence_type": "Housing burden indicator",
+        "statement": "A higher proportion of renter households spending 35 percent or more of income on rent indicates substantial housing cost burden.",
+        "relevance": "High housing costs can contribute to financial instability and reduce resources available for healthcare.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_housing_rent_35_plus_pct"
+      },
+      {
+        "factor": "snap_households_count_sum",
+        "domain": "economic_stability",
+        "evidence_type": "Social vulnerability indicator",
+        "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+        "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_snap_households_count_sum"
+      },
+      {
+        "factor": "housing_crowded_1_01_to_1_50_pct",
+        "domain": "housing",
+        "evidence_type": "Housing stability indicator",
+        "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+        "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+      },
+      {
+        "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+        "domain": "transportation",
+        "evidence_type": "Transportation access indicator",
+        "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+        "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+      },
+      {
+        "factor": "places_routine_checkup_pct",
+        "domain": "healthcare_access",
+        "evidence_type": "Preventive-care indicator",
+        "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+        "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_routine_checkup_pct"
+      },
+      {
+        "factor": "places_obesity_pct",
+        "domain": "neighborhood_built_environment",
+        "evidence_type": "Community health indicator",
+        "statement": "Higher obesity prevalence indicates greater community-level metabolic health burden.",
+        "relevance": "Elevated obesity prevalence can indicate increased need for community wellness and prevention resources.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_obesity_pct"
+      },
+      {
+        "factor": "education_less_than_9th_pct",
+        "domain": "education_access",
+        "evidence_type": "Education access indicator",
+        "statement": "A higher proportion of adults with less than a ninth-grade education indicates lower educational attainment.",
+        "relevance": "Lower educational attainment may create barriers to health literacy, healthcare navigation, and understanding health information.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_education_less_than_9th_pct"
+      },
+      {
+        "factor": "driving_low_income_low_access_tract_count",
+        "domain": "transportation",
+        "evidence_type": "Transportation access indicator",
+        "statement": "A higher number of low-income, low-access census tracts indicates increased geographic transportation vulnerability.",
+        "relevance": "Low-access areas may experience reduced ability to reach healthcare and essential services.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_driving_low_income_low_access_tract_count"
+      },
+      {
+        "factor": "places_physical_inactivity_pct",
+        "domain": "neighborhood_built_environment",
+        "evidence_type": "Community health indicator",
+        "statement": "Higher physical inactivity prevalence indicates greater community-level inactivity burden.",
+        "relevance": "Physical inactivity may contribute to chronic disease risk and indicates potential need for wellness resources.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_physical_inactivity_pct"
+      },
+      {
+        "factor": "places_copd_pct",
+        "domain": "neighborhood_built_environment",
+        "evidence_type": "Community health indicator",
+        "statement": "Higher COPD prevalence indicates greater community-level respiratory disease burden.",
+        "relevance": "Respiratory disease burden may increase the need for chronic disease and community health support.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_copd_pct"
+      },
+      {
+        "factor": "places_cholesterol_screening_pct",
+        "domain": "healthcare_access",
+        "evidence_type": "Preventive-care indicator",
+        "statement": "Cholesterol screening prevalence provides an indicator of preventive healthcare engagement.",
+        "relevance": "Lower screening utilization may indicate barriers to preventive healthcare access.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_cholesterol_screening_pct"
+      },
+      {
+        "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+        "domain": "transportation",
+        "evidence_type": "Transportation access indicator",
+        "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+        "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+      },
+      {
+        "factor": "places_diabetes_pct",
+        "domain": "neighborhood_built_environment",
+        "evidence_type": "Community health indicator",
+        "statement": "Higher diabetes prevalence indicates greater community-level chronic disease burden.",
+        "relevance": "Elevated chronic disease burden may indicate increased need for prevention and community health resources.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_diabetes_pct"
+      },
+      {
+        "factor": "housing_crowded_1_51_plus_pct",
+        "domain": "housing",
+        "evidence_type": "Housing stability indicator",
+        "statement": "A higher proportion of severely overcrowded households indicates significant housing pressure.",
+        "relevance": "Severe overcrowding may increase health risks and indicate housing instability.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_housing_crowded_1_51_plus_pct"
+      },
+      {
+        "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+        "domain": "transportation",
+        "evidence_type": "Transportation access indicator",
+        "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+        "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+      },
+      {
+        "factor": "housing_rent_30_to_34_9_pct",
+        "domain": "housing",
+        "evidence_type": "Housing burden indicator",
+        "statement": "A higher proportion of renter households spending 30 to 34.9 percent of income on rent indicates increased housing cost burden.",
+        "relevance": "Housing cost burden can reduce resources available for healthcare, transportation, food, and other basic needs.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_housing_rent_30_to_34_9_pct"
+      },
+      {
+        "factor": "places_poor_physical_health_pct",
+        "domain": "neighborhood_built_environment",
+        "evidence_type": "Community health indicator",
+        "statement": "Higher prevalence of poor physical health indicates greater community-level physical health burden.",
+        "relevance": "Poor physical health burden may indicate increased need for healthcare navigation and community support.",
+        "intervention_link": true,
+        "source": "SDOH knowledge base",
+        "version": "1.0.0",
+        "_registry_id": "evidence_places_poor_physical_health_pct"
+      }
+    ],
+    "intervention_candidates": [
+      {
+        "intervention_id": "INT_HEALTH_ENVIRONMENT",
+        "name": "Community health and healthy-environment support",
+        "domain": "Neighborhood and Built Environment",
+        "matched_factors": [
+          "places_copd_pct",
+          "places_diabetes_pct",
+          "places_obesity_pct",
+          "places_physical_inactivity_pct",
+          "places_poor_physical_health_pct"
+        ],
+        "matched_factor_count": 5,
+        "domain_match": true,
+        "score": 51
+      },
+      {
+        "intervention_id": "INT_HOUSING_STABILITY",
+        "name": "Housing stability and housing-support referral",
+        "domain": "Housing",
+        "matched_factors": [
+          "housing_rent_30_to_34_9_pct",
+          "housing_rent_35_plus_pct",
+          "housing_crowded_1_01_to_1_50_pct",
+          "housing_crowded_1_51_plus_pct"
+        ],
+        "matched_factor_count": 4,
+        "domain_match": true,
+        "score": 41
+      },
+      {
+        "intervention_id": "INT_TRANSPORTATION",
+        "name": "Transportation assistance for healthcare access",
+        "domain": "Transportation",
+        "matched_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_income_low_access_tract_count"
+        ],
+        "matched_factor_count": 4,
+        "domain_match": true,
+        "score": 41
+      },
+      {
+        "intervention_id": "INT_HEALTHCARE_ACCESS",
+        "name": "Healthcare navigation and preventive-care support",
+        "domain": "Healthcare Access",
+        "matched_factors": [
+          "places_routine_checkup_pct",
+          "places_cholesterol_screening_pct"
+        ],
+        "matched_factor_count": 2,
+        "domain_match": true,
+        "score": 21
+      },
+      {
+        "intervention_id": "INT_ECONOMIC_BENEFITS",
+        "name": "Financial assistance and benefits navigation",
+        "domain": "Economic Stability",
+        "matched_factors": [
+          "snap_households_count_sum"
+        ],
+        "matched_factor_count": 1,
+        "domain_match": true,
+        "score": 11
+      },
+      {
+        "intervention_id": "INT_EDUCATION_SUPPORT",
+        "name": "Health education and literacy support",
+        "domain": "Education Access",
+        "matched_factors": [
+          "education_less_than_9th_pct"
+        ],
+        "matched_factor_count": 1,
+        "domain_match": true,
+        "score": 11
+      }
+    ],
+    "reasoning_trace": [
+      "Member resolved.",
+      "Resolved 17 SDOH factors.",
+      "Resolved 6 SDOH domains.",
+      "Resolved 9 clinical factors.",
+      "Resolved 17 evidence records.",
+      "Resolved 6 intervention candidates."
+    ],
+    "county": "county:25009",
+    "county_fips": "25009",
+    "county_name": null
+  }
+}
