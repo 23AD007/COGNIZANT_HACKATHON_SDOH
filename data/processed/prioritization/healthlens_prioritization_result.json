@@ -1,0 +1,138 @@
+{
+  "member_id": "member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061",
+  "risk_probability": 0.9999193422541974,
+  "risk_band": "Very High",
+  "priorities": [
+    {
+      "intervention_id": "INT_HEALTH_ENVIRONMENT",
+      "name": "Community health and healthy-environment support",
+      "domain": "Neighborhood and Built Environment",
+      "matched_factors": [
+        "places_copd_pct",
+        "places_diabetes_pct",
+        "places_obesity_pct",
+        "places_physical_inactivity_pct",
+        "places_poor_physical_health_pct"
+      ],
+      "base_score": 51.0,
+      "priority_score": 102.0,
+      "priority_band": "Critical",
+      "rank": 1,
+      "rationale": "Community health and healthy-environment support was prioritized for the Neighborhood and Built Environment domain with 5 matched SDOH factors (context score 51) for a member with very high overall risk (priority score 102)."
+    },
+    {
+      "intervention_id": "INT_HOUSING_STABILITY",
+      "name": "Housing stability and housing-support referral",
+      "domain": "Housing",
+      "matched_factors": [
+        "housing_rent_30_to_34_9_pct",
+        "housing_rent_35_plus_pct",
+        "housing_crowded_1_01_to_1_50_pct",
+        "housing_crowded_1_51_plus_pct"
+      ],
+      "base_score": 41.0,
+      "priority_score": 82.0,
+      "priority_band": "Critical",
+      "rank": 2,
+      "rationale": "Housing stability and housing-support referral was prioritized for the Housing domain with 4 matched SDOH factors (context score 41) for a member with very high overall risk (priority score 82)."
+    },
+    {
+      "intervention_id": "INT_TRANSPORTATION",
+      "name": "Transportation assistance for healthcare access",
+      "domain": "Transportation",
+      "matched_factors": [
+        "driving_low_access_population_beyond_1mi_10mi_count_sum",
+        "driving_no_vehicle_households_beyond_1mi_count_sum",
+        "straight_no_vehicle_households_beyond_1mi_count_sum",
+        "driving_low_income_low_access_tract_count"
+      ],
+      "base_score": 41.0,
+      "priority_score": 82.0,
+      "priority_band": "Critical",
+      "rank": 3,
+      "rationale": "Transportation assistance for healthcare access was prioritized for the Transportation domain with 4 matched SDOH factors (context score 41) for a member with very high overall risk (priority score 82)."
+    },
+    {
+      "intervention_id": "INT_HEALTHCARE_ACCESS",
+      "name": "Healthcare navigation and preventive-care support",
+      "domain": "Healthcare Access",
+      "matched_factors": [
+        "places_routine_checkup_pct",
+        "places_cholesterol_screening_pct"
+      ],
+      "base_score": 21.0,
+      "priority_score": 42.0,
+      "priority_band": "High",
+      "rank": 4,
+      "rationale": "Healthcare navigation and preventive-care support was prioritized for the Healthcare Access domain with 2 matched SDOH factors (context score 21) for a member with very high overall risk (priority score 42)."
+    },
+    {
+      "intervention_id": "INT_ECONOMIC_BENEFITS",
+      "name": "Financial assistance and benefits navigation",
+      "domain": "Economic Stability",
+      "matched_factors": [
+        "snap_households_count_sum"
+      ],
+      "base_score": 11.0,
+      "priority_score": 22.0,
+      "priority_band": "Moderate",
+      "rank": 5,
+      "rationale": "Financial assistance and benefits navigation was prioritized for the Economic Stability domain with 1 matched SDOH factor (context score 11) for a member with very high overall risk (priority score 22)."
+    },
+    {
+      "intervention_id": "INT_EDUCATION_SUPPORT",
+      "name": "Health education and literacy support",
+      "domain": "Education Access",
+      "matched_factors": [
+        "education_less_than_9th_pct"
+      ],
+      "base_score": 11.0,
+      "priority_score": 22.0,
+      "priority_band": "Moderate",
+      "rank": 6,
+      "rationale": "Health education and literacy support was prioritized for the Education Access domain with 1 matched SDOH factor (context score 11) for a member with very high overall risk (priority score 22)."
+    }
+  ],
+  "reasoning_summary": {
+    "intervention_count": 6,
+    "domain_count": 6,
+    "factor_count": 17,
+    "domains": [
+      "Economic Stability",
+      "Education Access",
+      "Healthcare Access",
+      "Housing",
+      "Neighborhood and Built Environment",
+      "Transportation"
+    ],
+    "factors": [
+      "driving_low_access_population_beyond_1mi_10mi_count_sum",
+      "driving_low_income_low_access_tract_count",
+      "driving_no_vehicle_households_beyond_1mi_count_sum",
+      "education_less_than_9th_pct",
+      "housing_crowded_1_01_to_1_50_pct",
+      "housing_crowded_1_51_plus_pct",
+      "housing_rent_30_to_34_9_pct",
+      "housing_rent_35_plus_pct",
+      "places_cholesterol_screening_pct",
+      "places_copd_pct",
+      "places_diabetes_pct",
+      "places_obesity_pct",
+      "places_physical_inactivity_pct",
+      "places_poor_physical_health_pct",
+      "places_routine_checkup_pct",
+      "snap_households_count_sum",
+      "straight_no_vehicle_households_beyond_1mi_count_sum"
+    ],
+    "top_intervention": "INT_HEALTH_ENVIRONMENT"
+  },
+  "trace": [
+    "Prioritization started.",
+    "Member: member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061",
+    "Intervention candidates received: 6",
+    "Interventions ranked: 6",
+    "Top intervention: INT_HEALTH_ENVIRONMENT",
+    "Prioritization completed."
+  ],
+  "version": "1.0.0"
+}

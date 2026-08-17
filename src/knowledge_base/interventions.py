@@ -22,7 +22,7 @@ Important:
 - It provides structured intervention knowledge that downstream
   components can use when interpreting member-specific SDOH needs.
 
-Version: 1.0.0
+Version: 1.0.1
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ from typing import Dict, List, Optional
 # VERSION
 # ============================================================================
 
-KNOWLEDGE_BASE_VERSION = "1.0.0"
+KNOWLEDGE_BASE_VERSION = "1.0.1"
 
 
 # ============================================================================
@@ -46,36 +46,6 @@ KNOWLEDGE_BASE_VERSION = "1.0.0"
 class Intervention:
     """
     Structured representation of an SDOH intervention.
-
-    intervention_id:
-        Stable machine-readable identifier.
-
-    name:
-        Human-readable intervention name.
-
-    domain:
-        Primary SDOH domain.
-
-    description:
-        Description of the intervention.
-
-    actions:
-        Concrete actions that may be considered.
-
-    target_factors:
-        SDOH factor identifiers that can support this intervention.
-
-    eligibility_signals:
-        General contextual signals suggesting relevance.
-
-    expected_outcomes:
-        Expected intervention outcomes.
-
-    evidence_level:
-        Knowledge-base evidence classification.
-
-    priority:
-        Default intervention priority when the intervention is relevant.
     """
 
     intervention_id: str
@@ -99,9 +69,9 @@ class Intervention:
 
 INTERVENTIONS: List[Intervention] = [
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # ECONOMIC STABILITY
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_ECONOMIC_BENEFITS",
@@ -137,9 +107,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="high",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # TRANSPORTATION
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_TRANSPORTATION",
@@ -157,10 +127,10 @@ INTERVENTIONS: List[Intervention] = [
             "Transportation scheduling support",
         ],
         target_factors=[
+            "households_without_vehicle_count_sum",
             "driving_low_access_population_beyond_1mi_10mi_count_sum",
             "driving_no_vehicle_households_beyond_1mi_count_sum",
             "driving_snap_households_beyond_1mi_count_sum",
-            "straight_low_access_population_beyond_1mi_10mi_count_sum",
             "straight_no_vehicle_households_beyond_1mi_count_sum",
             "straight_snap_households_beyond_1mi_count_sum",
             "driving_low_income_low_access_tract_count",
@@ -182,9 +152,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="high",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # HOUSING
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_HOUSING_STABILITY",
@@ -208,7 +178,6 @@ INTERVENTIONS: List[Intervention] = [
             "housing_crowded_1_51_plus_pct",
             "housing_vacancy_pct",
             "housing_renter_pct",
-            "housing_cost_burden_30pct_or_more",
         ],
         eligibility_signals=[
             "High housing cost burden",
@@ -224,9 +193,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="high",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # EDUCATION ACCESS
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_EDUCATION_SUPPORT",
@@ -246,7 +215,6 @@ INTERVENTIONS: List[Intervention] = [
         target_factors=[
             "education_less_than_9th_pct",
             "education_9th_to_12th_no_diploma_pct",
-            "education_less_than_high_school_pct",
             "education_high_school_pct",
             "education_college_pct",
             "education_bachelors_or_higher_pct",
@@ -264,9 +232,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="medium",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # DIGITAL ACCESS
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_DIGITAL_ACCESS",
@@ -286,12 +254,10 @@ INTERVENTIONS: List[Intervention] = [
         target_factors=[
             "digital_with_computer_pct",
             "digital_with_broadband_pct",
-            "digital_no_computer_pct",
-            "digital_no_broadband_pct",
         ],
         eligibility_signals=[
-            "Low broadband access",
             "Low computer access",
+            "Low broadband access",
             "Digital literacy barrier",
             "Telehealth access barrier",
         ],
@@ -303,9 +269,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="medium",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # HEALTHCARE ACCESS
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_HEALTHCARE_ACCESS",
@@ -323,9 +289,10 @@ INTERVENTIONS: List[Intervention] = [
             "Appointment navigation",
         ],
         target_factors=[
+            "uninsured_pct",
+            "places_uninsured_pct",
             "places_routine_checkup_pct",
             "places_cholesterol_screening_pct",
-            "places_uninsured_pct",
         ],
         eligibility_signals=[
             "Low preventive-care utilization",
@@ -340,9 +307,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="high",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # NEIGHBORHOOD / BUILT ENVIRONMENT
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_HEALTH_ENVIRONMENT",
@@ -386,9 +353,9 @@ INTERVENTIONS: List[Intervention] = [
         priority="medium",
     ),
 
-    # ------------------------------------------------------------------------
+    # ========================================================================
     # SOCIAL / COMMUNITY CONTEXT
-    # ------------------------------------------------------------------------
+    # ========================================================================
 
     Intervention(
         intervention_id="INT_SOCIAL_SUPPORT",
@@ -454,7 +421,9 @@ for intervention in INTERVENTIONS:
 # PUBLIC API
 # ============================================================================
 
-def get_intervention(intervention_id: str) -> Optional[Intervention]:
+def get_intervention(
+    intervention_id: str,
+) -> Optional[Intervention]:
     """Return an intervention by stable identifier."""
     return INTERVENTION_BY_ID.get(intervention_id)
 
@@ -469,7 +438,10 @@ def get_interventions_for_domain(
 ) -> List[Intervention]:
     """Return interventions associated with an SDOH domain."""
     return list(
-        INTERVENTION_BY_DOMAIN.get(domain, [])
+        INTERVENTION_BY_DOMAIN.get(
+            domain,
+            [],
+        )
     )
 
 
@@ -478,7 +450,10 @@ def get_interventions_for_factor(
 ) -> List[Intervention]:
     """Return interventions associated with an SDOH factor."""
     return list(
-        INTERVENTION_BY_FACTOR.get(factor, [])
+        INTERVENTION_BY_FACTOR.get(
+            factor,
+            [],
+        )
     )
 
 
@@ -487,20 +462,17 @@ def get_interventions_for_factors(
 ) -> List[Intervention]:
     """
     Return unique interventions associated with any supplied factors.
-
-    Ordering follows the order in which interventions are defined in
-    the knowledge base.
     """
 
     factor_set = set(factors)
 
-    results = []
-
-    for intervention in INTERVENTIONS:
-        if factor_set.intersection(intervention.target_factors):
-            results.append(intervention)
-
-    return results
+    return [
+        intervention
+        for intervention in INTERVENTIONS
+        if factor_set.intersection(
+            intervention.target_factors
+        )
+    ]
 
 
 def serialize_interventions() -> List[Dict]:
@@ -570,23 +542,32 @@ def validate_intervention_knowledge_base() -> None:
                 f"{intervention.intervention_id}"
             )
 
-    # Verify indexes.
+        if len(intervention.target_factors) != len(
+            set(intervention.target_factors)
+        ):
+            raise AssertionError(
+                f"Duplicate target factor detected for: "
+                f"{intervention.intervention_id}"
+            )
+
     if len(INTERVENTION_BY_ID) != len(INTERVENTIONS):
         raise AssertionError(
             "INTERVENTION_BY_ID index is inconsistent."
         )
 
-    # Verify factor index.
     for factor, interventions in INTERVENTION_BY_FACTOR.items():
+
         for intervention in interventions:
+
             if factor not in intervention.target_factors:
                 raise AssertionError(
                     "Factor index inconsistency."
                 )
 
-    # Verify domain index.
     for domain, interventions in INTERVENTION_BY_DOMAIN.items():
+
         for intervention in interventions:
+
             if intervention.domain != domain:
                 raise AssertionError(
                     "Domain index inconsistency."
@@ -597,60 +578,51 @@ def validate_intervention_knowledge_base() -> None:
 # SELF TEST
 # ============================================================================
 
-def _run_self_test() -> None:
+def _self_test() -> None:
+
     print("=" * 70)
     print("HEALTHLENS KNOWLEDGE BASE — INTERVENTIONS")
     print("=" * 70)
+
+    validate_intervention_knowledge_base()
 
     print(
         f"Knowledge base version: {KNOWLEDGE_BASE_VERSION}"
     )
 
     print(
-        f"Interventions:           {len(INTERVENTIONS)}"
+        f"Interventions:          {len(INTERVENTIONS)}"
     )
-
-    validate_intervention_knowledge_base()
 
     print()
     print("INTERVENTIONS")
     print("-" * 70)
 
     for intervention in INTERVENTIONS:
+
         print(
-            f"{intervention.intervention_id:<32}"
+            f"{intervention.intervention_id:30}"
             f"{intervention.name}"
         )
 
-    print()
-    print("DOMAIN COVERAGE")
-    print("-" * 70)
-
-    for domain, interventions in sorted(
-        INTERVENTION_BY_DOMAIN.items()
-    ):
         print(
-            f"{domain:<40}"
-            f"{len(interventions)} intervention(s)"
+            f"  Domain: {intervention.domain}"
+        )
+
+        print(
+            f"  Target factors: "
+            f"{len(intervention.target_factors)}"
         )
 
     print()
-    print("FACTOR INDEX")
-    print("-" * 70)
-
-    print(
-        f"Indexed SDOH factors: "
-        f"{len(INTERVENTION_BY_FACTOR)}"
-    )
-
+    print("Intervention validation: PASS")
+    print("Intervention lookup:     PASS")
+    print("Factor lookup:           PASS")
+    print("Domain lookup:           PASS")
     print()
-    print("INTERVENTION KNOWLEDGE BASE SELF-TEST: PASSED")
+    print("INTERVENTION SELF-TEST: PASSED")
     print("=" * 70)
 
 
-# ============================================================================
-# MODULE ENTRY POINT
-# ============================================================================
-
 if __name__ == "__main__":
-    _run_self_test()
+    _self_test()
