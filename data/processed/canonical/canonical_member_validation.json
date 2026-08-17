@@ -1,0 +1,28 @@
+{
+  "schema_source": "D:\\HealthLens\\data\\processed\\member_model_features.csv",
+  "source_dataset": "D:\\HealthLens\\data\\processed\\member_model_dataset.csv",
+  "output_dataset": "D:\\HealthLens\\data\\processed\\canonical\\canonical_member_features.csv",
+  "member_count": 108,
+  "feature_count": 117,
+  "source_validation": {
+    "passed": true,
+    "member_count": 108,
+    "duplicate_member_ids": [],
+    "missing_member_ids": [],
+    "unsupported_columns": [],
+    "errors": [],
+    "warnings": []
+  },
+  "regression": {
+    "passed": true,
+    "source_rows": 108,
+    "canonical_rows": 108,
+    "source_features": 117,
+    "canonical_features": 117,
+    "member_id_match": true,
+    "feature_columns_match": true,
+    "value_mismatches": 0,
+    "missing_canonical_values": 0,
+    "errors": []
+  }
+}

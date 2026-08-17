@@ -1,0 +1,3247 @@
+{
+  "member_count": 12,
+  "passed": 12,
+  "failed": 0,
+  "classification_counts": {
+    "rich_context": 10,
+    "partial_context": 1,
+    "clinical_only": 1
+  },
+  "results": [
+    {
+      "member_id": "1e7909f8-39b2-3c7e-1fda-a6c3256dc061",
+      "graph_member_id": "member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061",
+      "risk_probability": 0.9999193422541974,
+      "risk_band": "Very High",
+      "risk_rank": 1,
+      "risk_percentile": 100.0,
+      "sdoh_factor_count": 17,
+      "sdoh_domain_count": 6,
+      "clinical_factor_count": 9,
+      "evidence_count": 17,
+      "intervention_candidate_count": 6,
+      "prioritized_intervention_count": 6,
+      "lambda_ranked_count": 6,
+      "recommendation_count": 6,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "housing_rent_35_plus_pct",
+          "snap_households_count_sum",
+          "housing_crowded_1_01_to_1_50_pct",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "places_routine_checkup_pct",
+          "places_obesity_pct",
+          "education_less_than_9th_pct",
+          "driving_low_income_low_access_tract_count",
+          "places_physical_inactivity_pct",
+          "places_copd_pct",
+          "places_cholesterol_screening_pct",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "places_diabetes_pct",
+          "housing_crowded_1_51_plus_pct",
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "housing_rent_30_to_34_9_pct",
+          "places_poor_physical_health_pct"
+        ],
+        "sdoh_domains": [
+          "Housing",
+          "Economic Stability",
+          "Transportation",
+          "Healthcare Access",
+          "Neighborhood and Built Environment",
+          "Education Access"
+        ],
+        "clinical_factors": [
+          "clinical_wellness_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_unique_careplan_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "housing_rent_35_plus_pct",
+            "domain": "housing",
+            "evidence_type": "Housing burden indicator",
+            "statement": "A higher proportion of renter households spending 35 percent or more of income on rent indicates substantial housing cost burden.",
+            "relevance": "High housing costs can contribute to financial instability and reduce resources available for healthcare.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_rent_35_plus_pct"
+          },
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "places_obesity_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher obesity prevalence indicates greater community-level metabolic health burden.",
+            "relevance": "Elevated obesity prevalence can indicate increased need for community wellness and prevention resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_obesity_pct"
+          },
+          {
+            "factor": "education_less_than_9th_pct",
+            "domain": "education_access",
+            "evidence_type": "Education access indicator",
+            "statement": "A higher proportion of adults with less than a ninth-grade education indicates lower educational attainment.",
+            "relevance": "Lower educational attainment may create barriers to health literacy, healthcare navigation, and understanding health information.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_education_less_than_9th_pct"
+          },
+          {
+            "factor": "driving_low_income_low_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-income, low-access census tracts indicates increased geographic transportation vulnerability.",
+            "relevance": "Low-access areas may experience reduced ability to reach healthcare and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_income_low_access_tract_count"
+          },
+          {
+            "factor": "places_physical_inactivity_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher physical inactivity prevalence indicates greater community-level inactivity burden.",
+            "relevance": "Physical inactivity may contribute to chronic disease risk and indicates potential need for wellness resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_physical_inactivity_pct"
+          },
+          {
+            "factor": "places_copd_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher COPD prevalence indicates greater community-level respiratory disease burden.",
+            "relevance": "Respiratory disease burden may increase the need for chronic disease and community health support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_copd_pct"
+          },
+          {
+            "factor": "places_cholesterol_screening_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Cholesterol screening prevalence provides an indicator of preventive healthcare engagement.",
+            "relevance": "Lower screening utilization may indicate barriers to preventive healthcare access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_cholesterol_screening_pct"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "places_diabetes_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher diabetes prevalence indicates greater community-level chronic disease burden.",
+            "relevance": "Elevated chronic disease burden may indicate increased need for prevention and community health resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_diabetes_pct"
+          },
+          {
+            "factor": "housing_crowded_1_51_plus_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of severely overcrowded households indicates significant housing pressure.",
+            "relevance": "Severe overcrowding may increase health risks and indicate housing instability.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_51_plus_pct"
+          },
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "housing_rent_30_to_34_9_pct",
+            "domain": "housing",
+            "evidence_type": "Housing burden indicator",
+            "statement": "A higher proportion of renter households spending 30 to 34.9 percent of income on rent indicates increased housing cost burden.",
+            "relevance": "Housing cost burden can reduce resources available for healthcare, transportation, food, and other basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_rent_30_to_34_9_pct"
+          },
+          {
+            "factor": "places_poor_physical_health_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher prevalence of poor physical health indicates greater community-level physical health burden.",
+            "relevance": "Poor physical health burden may indicate increased need for healthcare navigation and community support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_poor_physical_health_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_HEALTH_ENVIRONMENT",
+          "intervention_name": "Community health and healthy-environment support",
+          "domain": "Neighborhood and Built Environment",
+          "priority_score": 102.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "places_copd_pct",
+            "places_diabetes_pct",
+            "places_obesity_pct",
+            "places_physical_inactivity_pct",
+            "places_poor_physical_health_pct"
+          ],
+          "evidence_count": 5,
+          "evidence_ids": [],
+          "action": "Consider Community health and healthy-environment support for the Neighborhood and Built Environment domain, addressing 5 identified SDOH factors.",
+          "rationale": "Community health and healthy-environment support is recommended for the Neighborhood and Built Environment domain because 5 SDOH factors matched the intervention. The intervention has a priority score of 102 and a Critical priority level for a member with Very High overall risk. The recommendation is supported by 5 supporting evidence records.",
+          "supporting_factors": [
+            "places_copd_pct",
+            "places_diabetes_pct",
+            "places_obesity_pct",
+            "places_physical_inactivity_pct",
+            "places_poor_physical_health_pct"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 82.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "housing_rent_30_to_34_9_pct",
+            "housing_rent_35_plus_pct",
+            "housing_crowded_1_01_to_1_50_pct",
+            "housing_crowded_1_51_plus_pct"
+          ],
+          "evidence_count": 4,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 4 identified SDOH factors.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 4 SDOH factors matched the intervention. The intervention has a priority score of 82 and a Critical priority level for a member with Very High overall risk. The recommendation is supported by 4 supporting evidence records.",
+          "supporting_factors": [
+            "housing_rent_30_to_34_9_pct",
+            "housing_rent_35_plus_pct",
+            "housing_crowded_1_01_to_1_50_pct",
+            "housing_crowded_1_51_plus_pct"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 82.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_low_income_low_access_tract_count"
+          ],
+          "evidence_count": 4,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 4 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 4 SDOH factors matched the intervention. The intervention has a priority score of 82 and a Critical priority level for a member with Very High overall risk. The recommendation is supported by 4 supporting evidence records.",
+          "supporting_factors": [
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_low_income_low_access_tract_count"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct",
+            "places_cholesterol_screening_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 2 identified SDOH factors.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very High overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "places_routine_checkup_pct",
+            "places_cholesterol_screening_pct"
+          ]
+        },
+        {
+          "rank": 5,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 6,
+          "intervention_id": "INT_EDUCATION_SUPPORT",
+          "intervention_name": "Health education and literacy support",
+          "domain": "Education Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "education_less_than_9th_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Health education and literacy support for the Education Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Health education and literacy support is recommended for the Education Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "education_less_than_9th_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "688c8453-ba6f-7dec-03c3-eaa27d6df1a4",
+      "graph_member_id": "member:688c8453_ba6f_7dec_03c3_eaa27d6df1a4",
+      "risk_probability": 0.9998982569477148,
+      "risk_band": "Very High",
+      "risk_rank": 2,
+      "risk_percentile": 99.07407407407408,
+      "sdoh_factor_count": 4,
+      "sdoh_domain_count": 2,
+      "clinical_factor_count": 9,
+      "evidence_count": 4,
+      "intervention_candidate_count": 2,
+      "prioritized_intervention_count": 2,
+      "lambda_ranked_count": 2,
+      "recommendation_count": 2,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "partial_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "places_routine_checkup_pct",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_vehicle_access_tract_count"
+        ],
+        "sdoh_domains": [
+          "Transportation",
+          "Healthcare Access"
+        ],
+        "clinical_factors": [
+          "clinical_wellness_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_unique_careplan_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-vehicle-access tracts indicates greater community transportation vulnerability.",
+            "relevance": "Low vehicle access can limit healthcare and essential-service access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_vehicle_access_tract_count"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 62.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count"
+          ],
+          "evidence_count": 3,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 3 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 3 SDOH factors matched the intervention. The intervention has a priority score of 62 and a Critical priority level for a member with Very High overall risk. The recommendation is supported by 3 supporting evidence records.",
+          "supporting_factors": [
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "7ad140ab-bfae-c3ae-20a3-2244b1c4d0e2",
+      "graph_member_id": "member:7ad140ab_bfae_c3ae_20a3_2244b1c4d0e2",
+      "risk_probability": 0.999896111749114,
+      "risk_band": "Very High",
+      "risk_rank": 3,
+      "risk_percentile": 98.14814814814817,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 7,
+      "clinical_factor_count": 8,
+      "evidence_count": 11,
+      "intervention_candidate_count": 7,
+      "prioritized_intervention_count": 7,
+      "lambda_ranked_count": 7,
+      "recommendation_count": 7,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "snap_households_count_sum",
+          "education_less_than_9th_pct",
+          "places_routine_checkup_pct",
+          "places_cholesterol_screening_pct",
+          "housing_crowded_1_01_to_1_50_pct",
+          "housing_crowded_1_51_plus_pct",
+          "households_without_vehicle_count_sum",
+          "places_poor_mental_health_pct",
+          "digital_with_broadband_pct",
+          "education_9th_to_12th_no_diploma_pct",
+          "places_physical_inactivity_pct"
+        ],
+        "sdoh_domains": [
+          "Economic Stability",
+          "Education Access",
+          "Healthcare Access",
+          "Housing",
+          "Transportation",
+          "Neighborhood and Built Environment",
+          "Digital Access"
+        ],
+        "clinical_factors": [
+          "clinical_wellness_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_unique_careplan_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "education_less_than_9th_pct",
+            "domain": "education_access",
+            "evidence_type": "Education access indicator",
+            "statement": "A higher proportion of adults with less than a ninth-grade education indicates lower educational attainment.",
+            "relevance": "Lower educational attainment may create barriers to health literacy, healthcare navigation, and understanding health information.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_education_less_than_9th_pct"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "places_cholesterol_screening_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Cholesterol screening prevalence provides an indicator of preventive healthcare engagement.",
+            "relevance": "Lower screening utilization may indicate barriers to preventive healthcare access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_cholesterol_screening_pct"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          },
+          {
+            "factor": "housing_crowded_1_51_plus_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of severely overcrowded households indicates significant housing pressure.",
+            "relevance": "Severe overcrowding may increase health risks and indicate housing instability.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_51_plus_pct"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "places_poor_mental_health_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher prevalence of poor mental health indicates greater community-level mental health burden.",
+            "relevance": "Community mental health burden may indicate increased need for behavioral-health and community-support resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_poor_mental_health_pct"
+          },
+          {
+            "factor": "digital_with_broadband_pct",
+            "domain": "digital_access",
+            "evidence_type": "Digital access indicator",
+            "statement": "Broadband access provides an indicator of community digital connectivity.",
+            "relevance": "Limited broadband access can restrict telehealth and digital healthcare access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_digital_with_broadband_pct"
+          },
+          {
+            "factor": "education_9th_to_12th_no_diploma_pct",
+            "domain": "education_access",
+            "evidence_type": "Education access indicator",
+            "statement": "A higher proportion of adults completing ninth through twelfth grade without a diploma indicates lower educational attainment.",
+            "relevance": "Lower educational attainment can affect health literacy and ability to navigate healthcare resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_education_9th_to_12th_no_diploma_pct"
+          },
+          {
+            "factor": "places_physical_inactivity_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher physical inactivity prevalence indicates greater community-level inactivity burden.",
+            "relevance": "Physical inactivity may contribute to chronic disease risk and indicates potential need for wellness resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_physical_inactivity_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_EDUCATION_SUPPORT",
+          "intervention_name": "Health education and literacy support",
+          "domain": "Education Access",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "education_less_than_9th_pct",
+            "education_9th_to_12th_no_diploma_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Health education and literacy support for the Education Access domain, addressing 2 identified SDOH factors.",
+          "rationale": "Health education and literacy support is recommended for the Education Access domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very High overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "education_less_than_9th_pct",
+            "education_9th_to_12th_no_diploma_pct"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct",
+            "places_cholesterol_screening_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 2 identified SDOH factors.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very High overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "places_routine_checkup_pct",
+            "places_cholesterol_screening_pct"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTH_ENVIRONMENT",
+          "intervention_name": "Community health and healthy-environment support",
+          "domain": "Neighborhood and Built Environment",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "places_physical_inactivity_pct",
+            "places_poor_mental_health_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Community health and healthy-environment support for the Neighborhood and Built Environment domain, addressing 2 identified SDOH factors.",
+          "rationale": "Community health and healthy-environment support is recommended for the Neighborhood and Built Environment domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very High overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "places_physical_inactivity_pct",
+            "places_poor_mental_health_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct",
+            "housing_crowded_1_51_plus_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 2 identified SDOH factors.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very High overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct",
+            "housing_crowded_1_51_plus_pct"
+          ]
+        },
+        {
+          "rank": 5,
+          "intervention_id": "INT_DIGITAL_ACCESS",
+          "intervention_name": "Digital-access and telehealth support",
+          "domain": "Digital Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "digital_with_broadband_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Digital-access and telehealth support for the Digital Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Digital-access and telehealth support is recommended for the Digital Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "digital_with_broadband_pct"
+          ]
+        },
+        {
+          "rank": 6,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 7,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "households_without_vehicle_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 1 identified SDOH factor.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "9277390b-8a92-52e1-4d99-bb4849bac775",
+      "graph_member_id": "member:9277390b_8a92_52e1_4d99_bb4849bac775",
+      "risk_probability": 0.9998947830736032,
+      "risk_band": "Very High",
+      "risk_rank": 4,
+      "risk_percentile": 97.2222222222222,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 4,
+      "clinical_factor_count": 7,
+      "evidence_count": 11,
+      "intervention_candidate_count": 4,
+      "prioritized_intervention_count": 4,
+      "lambda_ranked_count": 4,
+      "recommendation_count": 4,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_vehicle_access_tract_count",
+          "straight_low_vehicle_access_tract_count",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "snap_households_count_sum",
+          "places_routine_checkup_pct",
+          "driving_snap_households_beyond_1mi_count_sum",
+          "households_without_vehicle_count_sum",
+          "straight_snap_households_beyond_1mi_count_sum",
+          "housing_crowded_1_01_to_1_50_pct"
+        ],
+        "sdoh_domains": [
+          "Transportation",
+          "Economic Stability",
+          "Healthcare Access",
+          "Housing"
+        ],
+        "clinical_factors": [
+          "clinical_wellness_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_condition_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-vehicle-access tracts indicates greater community transportation vulnerability.",
+            "relevance": "Low vehicle access can limit healthcare and essential-service access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Low vehicle access at the tract level indicates increased transportation vulnerability.",
+            "relevance": "Limited vehicle access may create barriers to healthcare appointments and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "driving_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households located in low-access areas may face combined economic and transportation barriers.",
+            "relevance": "Combined economic and transportation barriers can compound difficulty accessing healthcare and basic resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "straight_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households experiencing geographic access limitations may face combined socioeconomic and transportation barriers.",
+            "relevance": "Multiple barriers can compound difficulty accessing healthcare and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 162.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ],
+          "evidence_count": 8,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 8 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 8 SDOH factors matched the intervention. The intervention has a priority score of 162 and a Critical priority level for a member with Very High overall risk. The recommendation is supported by 8 supporting evidence records.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "a172af40-3eeb-e33a-f4eb-bcf071ed5299",
+      "graph_member_id": "member:a172af40_3eeb_e33a_f4eb_bcf071ed5299",
+      "risk_probability": 0.0068399962811337,
+      "risk_band": "High",
+      "risk_rank": 32,
+      "risk_percentile": 71.29629629629629,
+      "sdoh_factor_count": 0,
+      "sdoh_domain_count": 0,
+      "clinical_factor_count": 20,
+      "evidence_count": 0,
+      "intervention_candidate_count": 0,
+      "prioritized_intervention_count": 0,
+      "lambda_ranked_count": 0,
+      "recommendation_count": 0,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "clinical_only",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [],
+        "sdoh_domains": [],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_allergy_count",
+          "clinical_unique_medication_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_allergy_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": []
+      },
+      "recommendations": []
+    },
+    {
+      "member_id": "ba234ff2-cefe-dfee-935a-8ea2378da8c2",
+      "graph_member_id": "member:ba234ff2_cefe_dfee_935a_8ea2378da8c2",
+      "risk_probability": 0.005736517721955,
+      "risk_band": "High",
+      "risk_rank": 33,
+      "risk_percentile": 70.37037037037037,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 4,
+      "clinical_factor_count": 20,
+      "evidence_count": 11,
+      "intervention_candidate_count": 4,
+      "prioritized_intervention_count": 4,
+      "lambda_ranked_count": 4,
+      "recommendation_count": 4,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_vehicle_access_tract_count",
+          "straight_low_vehicle_access_tract_count",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "snap_households_count_sum",
+          "places_routine_checkup_pct",
+          "driving_snap_households_beyond_1mi_count_sum",
+          "households_without_vehicle_count_sum",
+          "straight_snap_households_beyond_1mi_count_sum",
+          "housing_crowded_1_01_to_1_50_pct"
+        ],
+        "sdoh_domains": [
+          "Transportation",
+          "Economic Stability",
+          "Healthcare Access",
+          "Housing"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_medication_count",
+          "clinical_snf_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_emergency_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-vehicle-access tracts indicates greater community transportation vulnerability.",
+            "relevance": "Low vehicle access can limit healthcare and essential-service access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Low vehicle access at the tract level indicates increased transportation vulnerability.",
+            "relevance": "Limited vehicle access may create barriers to healthcare appointments and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "driving_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households located in low-access areas may face combined economic and transportation barriers.",
+            "relevance": "Combined economic and transportation barriers can compound difficulty accessing healthcare and basic resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "straight_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households experiencing geographic access limitations may face combined socioeconomic and transportation barriers.",
+            "relevance": "Multiple barriers can compound difficulty accessing healthcare and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 162.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ],
+          "evidence_count": 8,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 8 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 8 SDOH factors matched the intervention. The intervention has a priority score of 162 and a Critical priority level for a member with High overall risk. The recommendation is supported by 8 supporting evidence records.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "20447ad5-5095-fb78-2bd9-69bf39242b4a",
+      "graph_member_id": "member:20447ad5_5095_fb78_2bd9_69bf39242b4a",
+      "risk_probability": 0.0049598737828469,
+      "risk_band": "High",
+      "risk_rank": 34,
+      "risk_percentile": 69.44444444444444,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 4,
+      "clinical_factor_count": 19,
+      "evidence_count": 11,
+      "intervention_candidate_count": 4,
+      "prioritized_intervention_count": 4,
+      "lambda_ranked_count": 4,
+      "recommendation_count": 4,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_vehicle_access_tract_count",
+          "straight_low_vehicle_access_tract_count",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "snap_households_count_sum",
+          "places_routine_checkup_pct",
+          "driving_snap_households_beyond_1mi_count_sum",
+          "households_without_vehicle_count_sum",
+          "straight_snap_households_beyond_1mi_count_sum",
+          "housing_crowded_1_01_to_1_50_pct"
+        ],
+        "sdoh_domains": [
+          "Transportation",
+          "Economic Stability",
+          "Healthcare Access",
+          "Housing"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_medication_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_emergency_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-vehicle-access tracts indicates greater community transportation vulnerability.",
+            "relevance": "Low vehicle access can limit healthcare and essential-service access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Low vehicle access at the tract level indicates increased transportation vulnerability.",
+            "relevance": "Limited vehicle access may create barriers to healthcare appointments and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "driving_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households located in low-access areas may face combined economic and transportation barriers.",
+            "relevance": "Combined economic and transportation barriers can compound difficulty accessing healthcare and basic resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "straight_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households experiencing geographic access limitations may face combined socioeconomic and transportation barriers.",
+            "relevance": "Multiple barriers can compound difficulty accessing healthcare and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 162.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ],
+          "evidence_count": 8,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 8 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 8 SDOH factors matched the intervention. The intervention has a priority score of 162 and a Critical priority level for a member with High overall risk. The recommendation is supported by 8 supporting evidence records.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "53e4891a-9108-67ef-d973-3b6a98404249",
+      "graph_member_id": "member:53e4891a_9108_67ef_d973_3b6a98404249",
+      "risk_probability": 0.0041781052827664,
+      "risk_band": "High",
+      "risk_rank": 35,
+      "risk_percentile": 68.51851851851852,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 4,
+      "clinical_factor_count": 20,
+      "evidence_count": 11,
+      "intervention_candidate_count": 4,
+      "prioritized_intervention_count": 4,
+      "lambda_ranked_count": 4,
+      "recommendation_count": 4,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_vehicle_access_tract_count",
+          "straight_low_vehicle_access_tract_count",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "snap_households_count_sum",
+          "places_routine_checkup_pct",
+          "driving_snap_households_beyond_1mi_count_sum",
+          "households_without_vehicle_count_sum",
+          "straight_snap_households_beyond_1mi_count_sum",
+          "housing_crowded_1_01_to_1_50_pct"
+        ],
+        "sdoh_domains": [
+          "Transportation",
+          "Economic Stability",
+          "Healthcare Access",
+          "Housing"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_urgentcare_count",
+          "clinical_unique_medication_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_emergency_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-vehicle-access tracts indicates greater community transportation vulnerability.",
+            "relevance": "Low vehicle access can limit healthcare and essential-service access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Low vehicle access at the tract level indicates increased transportation vulnerability.",
+            "relevance": "Limited vehicle access may create barriers to healthcare appointments and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "driving_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households located in low-access areas may face combined economic and transportation barriers.",
+            "relevance": "Combined economic and transportation barriers can compound difficulty accessing healthcare and basic resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "straight_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households experiencing geographic access limitations may face combined socioeconomic and transportation barriers.",
+            "relevance": "Multiple barriers can compound difficulty accessing healthcare and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 162.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ],
+          "evidence_count": 8,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 8 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 8 SDOH factors matched the intervention. The intervention has a priority score of 162 and a Critical priority level for a member with High overall risk. The recommendation is supported by 8 supporting evidence records.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "High",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with High overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "38389261-1bb1-5848-dbed-abbae41b2b6a",
+      "graph_member_id": "member:38389261_1bb1_5848_dbed_abbae41b2b6a",
+      "risk_probability": 5.288637495908405e-05,
+      "risk_band": "Very Low",
+      "risk_rank": 108,
+      "risk_percentile": 0.9259259259259258,
+      "sdoh_factor_count": 14,
+      "sdoh_domain_count": 3,
+      "clinical_factor_count": 20,
+      "evidence_count": 14,
+      "intervention_candidate_count": 3,
+      "prioritized_intervention_count": 3,
+      "lambda_ranked_count": 3,
+      "recommendation_count": 3,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "housing_rent_35_plus_pct",
+          "places_asthma_pct",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "straight_snap_households_beyond_1mi_count_sum",
+          "driving_snap_households_beyond_1mi_count_sum",
+          "places_obesity_pct",
+          "places_poor_mental_health_pct",
+          "places_copd_pct",
+          "places_diabetes_pct",
+          "places_stroke_pct",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_low_income_low_access_tract_count",
+          "straight_low_income_low_access_tract_count"
+        ],
+        "sdoh_domains": [
+          "Housing",
+          "Neighborhood and Built Environment",
+          "Transportation"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_medication_count",
+          "clinical_snf_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_emergency_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "housing_rent_35_plus_pct",
+            "domain": "housing",
+            "evidence_type": "Housing burden indicator",
+            "statement": "A higher proportion of renter households spending 35 percent or more of income on rent indicates substantial housing cost burden.",
+            "relevance": "High housing costs can contribute to financial instability and reduce resources available for healthcare.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_rent_35_plus_pct"
+          },
+          {
+            "factor": "places_asthma_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher asthma prevalence indicates greater community-level respiratory health burden.",
+            "relevance": "Elevated respiratory disease burden may indicate increased need for community health resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_asthma_pct"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "straight_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households experiencing geographic access limitations may face combined socioeconomic and transportation barriers.",
+            "relevance": "Multiple barriers can compound difficulty accessing healthcare and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households located in low-access areas may face combined economic and transportation barriers.",
+            "relevance": "Combined economic and transportation barriers can compound difficulty accessing healthcare and basic resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "places_obesity_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher obesity prevalence indicates greater community-level metabolic health burden.",
+            "relevance": "Elevated obesity prevalence can indicate increased need for community wellness and prevention resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_obesity_pct"
+          },
+          {
+            "factor": "places_poor_mental_health_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher prevalence of poor mental health indicates greater community-level mental health burden.",
+            "relevance": "Community mental health burden may indicate increased need for behavioral-health and community-support resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_poor_mental_health_pct"
+          },
+          {
+            "factor": "places_copd_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher COPD prevalence indicates greater community-level respiratory disease burden.",
+            "relevance": "Respiratory disease burden may increase the need for chronic disease and community health support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_copd_pct"
+          },
+          {
+            "factor": "places_diabetes_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher diabetes prevalence indicates greater community-level chronic disease burden.",
+            "relevance": "Elevated chronic disease burden may indicate increased need for prevention and community health resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_diabetes_pct"
+          },
+          {
+            "factor": "places_stroke_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher stroke prevalence indicates greater community-level cardiovascular health burden.",
+            "relevance": "Higher stroke burden may indicate increased need for preventive and chronic-care resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_stroke_pct"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "driving_low_income_low_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-income, low-access census tracts indicates increased geographic transportation vulnerability.",
+            "relevance": "Low-access areas may experience reduced ability to reach healthcare and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_income_low_access_tract_count"
+          },
+          {
+            "factor": "straight_low_income_low_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Low-income, low-access areas indicate combined socioeconomic and geographic vulnerability.",
+            "relevance": "Combined socioeconomic and transportation barriers can reduce access to healthcare.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_low_income_low_access_tract_count"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 142.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_income_low_access_tract_count",
+            "straight_low_income_low_access_tract_count"
+          ],
+          "evidence_count": 7,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 7 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 7 SDOH factors matched the intervention. The intervention has a priority score of 142 and a Critical priority level for a member with Very Low overall risk. The recommendation is supported by 7 supporting evidence records.",
+          "supporting_factors": [
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_income_low_access_tract_count",
+            "straight_low_income_low_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_HEALTH_ENVIRONMENT",
+          "intervention_name": "Community health and healthy-environment support",
+          "domain": "Neighborhood and Built Environment",
+          "priority_score": 122.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "places_asthma_pct",
+            "places_copd_pct",
+            "places_diabetes_pct",
+            "places_obesity_pct",
+            "places_poor_mental_health_pct",
+            "places_stroke_pct"
+          ],
+          "evidence_count": 6,
+          "evidence_ids": [],
+          "action": "Consider Community health and healthy-environment support for the Neighborhood and Built Environment domain, addressing 6 identified SDOH factors.",
+          "rationale": "Community health and healthy-environment support is recommended for the Neighborhood and Built Environment domain because 6 SDOH factors matched the intervention. The intervention has a priority score of 122 and a Critical priority level for a member with Very Low overall risk. The recommendation is supported by 6 supporting evidence records.",
+          "supporting_factors": [
+            "places_asthma_pct",
+            "places_copd_pct",
+            "places_diabetes_pct",
+            "places_obesity_pct",
+            "places_poor_mental_health_pct",
+            "places_stroke_pct"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "housing_rent_35_plus_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_rent_35_plus_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "4c756282-9faf-4e7b-1689-3e3a3cb39537",
+      "graph_member_id": "member:4c756282_9faf_4e7b_1689_3e3a3cb39537",
+      "risk_probability": 5.567914277419334e-05,
+      "risk_band": "Very Low",
+      "risk_rank": 107,
+      "risk_percentile": 1.851851851851852,
+      "sdoh_factor_count": 14,
+      "sdoh_domain_count": 5,
+      "clinical_factor_count": 20,
+      "evidence_count": 14,
+      "intervention_candidate_count": 5,
+      "prioritized_intervention_count": 5,
+      "lambda_ranked_count": 5,
+      "recommendation_count": 5,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "places_copd_pct",
+          "places_heart_disease_pct",
+          "places_stroke_pct",
+          "digital_with_broadband_pct",
+          "places_obesity_pct",
+          "places_diabetes_pct",
+          "driving_low_income_low_access_tract_count",
+          "places_asthma_pct",
+          "places_poor_physical_health_pct",
+          "places_poor_mental_health_pct",
+          "housing_rent_35_plus_pct",
+          "digital_with_computer_pct",
+          "places_smoking_pct",
+          "places_routine_checkup_pct"
+        ],
+        "sdoh_domains": [
+          "Neighborhood and Built Environment",
+          "Digital Access",
+          "Transportation",
+          "Housing",
+          "Healthcare Access"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_allergy_count",
+          "clinical_unique_medication_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_allergy_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "places_copd_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher COPD prevalence indicates greater community-level respiratory disease burden.",
+            "relevance": "Respiratory disease burden may increase the need for chronic disease and community health support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_copd_pct"
+          },
+          {
+            "factor": "places_heart_disease_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher heart disease prevalence indicates greater community cardiovascular disease burden.",
+            "relevance": "Higher cardiovascular disease burden may increase the need for preventive and chronic disease support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_heart_disease_pct"
+          },
+          {
+            "factor": "places_stroke_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher stroke prevalence indicates greater community-level cardiovascular health burden.",
+            "relevance": "Higher stroke burden may indicate increased need for preventive and chronic-care resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_stroke_pct"
+          },
+          {
+            "factor": "digital_with_broadband_pct",
+            "domain": "digital_access",
+            "evidence_type": "Digital access indicator",
+            "statement": "Broadband access provides an indicator of community digital connectivity.",
+            "relevance": "Limited broadband access can restrict telehealth and digital healthcare access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_digital_with_broadband_pct"
+          },
+          {
+            "factor": "places_obesity_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher obesity prevalence indicates greater community-level metabolic health burden.",
+            "relevance": "Elevated obesity prevalence can indicate increased need for community wellness and prevention resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_obesity_pct"
+          },
+          {
+            "factor": "places_diabetes_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher diabetes prevalence indicates greater community-level chronic disease burden.",
+            "relevance": "Elevated chronic disease burden may indicate increased need for prevention and community health resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_diabetes_pct"
+          },
+          {
+            "factor": "driving_low_income_low_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-income, low-access census tracts indicates increased geographic transportation vulnerability.",
+            "relevance": "Low-access areas may experience reduced ability to reach healthcare and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_income_low_access_tract_count"
+          },
+          {
+            "factor": "places_asthma_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher asthma prevalence indicates greater community-level respiratory health burden.",
+            "relevance": "Elevated respiratory disease burden may indicate increased need for community health resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_asthma_pct"
+          },
+          {
+            "factor": "places_poor_physical_health_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher prevalence of poor physical health indicates greater community-level physical health burden.",
+            "relevance": "Poor physical health burden may indicate increased need for healthcare navigation and community support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_poor_physical_health_pct"
+          },
+          {
+            "factor": "places_poor_mental_health_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher prevalence of poor mental health indicates greater community-level mental health burden.",
+            "relevance": "Community mental health burden may indicate increased need for behavioral-health and community-support resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_poor_mental_health_pct"
+          },
+          {
+            "factor": "housing_rent_35_plus_pct",
+            "domain": "housing",
+            "evidence_type": "Housing burden indicator",
+            "statement": "A higher proportion of renter households spending 35 percent or more of income on rent indicates substantial housing cost burden.",
+            "relevance": "High housing costs can contribute to financial instability and reduce resources available for healthcare.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_rent_35_plus_pct"
+          },
+          {
+            "factor": "digital_with_computer_pct",
+            "domain": "digital_access",
+            "evidence_type": "Digital access indicator",
+            "statement": "Computer access provides an indicator of community digital connectivity.",
+            "relevance": "Limited computer access may reduce the ability to use digital healthcare services and health information.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_digital_with_computer_pct"
+          },
+          {
+            "factor": "places_smoking_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher smoking prevalence indicates greater community-level tobacco-use burden.",
+            "relevance": "Smoking burden may indicate increased need for prevention and health-behavior support.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_smoking_pct"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_HEALTH_ENVIRONMENT",
+          "intervention_name": "Community health and healthy-environment support",
+          "domain": "Neighborhood and Built Environment",
+          "priority_score": 182.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "places_asthma_pct",
+            "places_copd_pct",
+            "places_diabetes_pct",
+            "places_heart_disease_pct",
+            "places_obesity_pct",
+            "places_poor_mental_health_pct",
+            "places_poor_physical_health_pct",
+            "places_smoking_pct",
+            "places_stroke_pct"
+          ],
+          "evidence_count": 9,
+          "evidence_ids": [],
+          "action": "Consider Community health and healthy-environment support for the Neighborhood and Built Environment domain, addressing 9 identified SDOH factors.",
+          "rationale": "Community health and healthy-environment support is recommended for the Neighborhood and Built Environment domain because 9 SDOH factors matched the intervention. The intervention has a priority score of 182 and a Critical priority level for a member with Very Low overall risk. The recommendation is supported by 9 supporting evidence records.",
+          "supporting_factors": [
+            "places_asthma_pct",
+            "places_copd_pct",
+            "places_diabetes_pct",
+            "places_heart_disease_pct",
+            "places_obesity_pct",
+            "places_poor_mental_health_pct",
+            "places_poor_physical_health_pct",
+            "places_smoking_pct",
+            "places_stroke_pct"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_DIGITAL_ACCESS",
+          "intervention_name": "Digital-access and telehealth support",
+          "domain": "Digital Access",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "digital_with_computer_pct",
+            "digital_with_broadband_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Digital-access and telehealth support for the Digital Access domain, addressing 2 identified SDOH factors.",
+          "rationale": "Digital-access and telehealth support is recommended for the Digital Access domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very Low overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "digital_with_computer_pct",
+            "digital_with_broadband_pct"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "housing_rent_35_plus_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_rent_35_plus_pct"
+          ]
+        },
+        {
+          "rank": 5,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "driving_low_income_low_access_tract_count"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 1 identified SDOH factor.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "driving_low_income_low_access_tract_count"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "1d9a4ec2-5e53-d852-ef66-d4de1671f6d8",
+      "graph_member_id": "member:1d9a4ec2_5e53_d852_ef66_d4de1671f6d8",
+      "risk_probability": 5.571177461446286e-05,
+      "risk_band": "Very Low",
+      "risk_rank": 106,
+      "risk_percentile": 2.7777777777777777,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 4,
+      "clinical_factor_count": 20,
+      "evidence_count": 11,
+      "intervention_candidate_count": 4,
+      "prioritized_intervention_count": 4,
+      "lambda_ranked_count": 4,
+      "recommendation_count": 4,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "driving_low_access_population_beyond_1mi_10mi_count_sum",
+          "driving_no_vehicle_households_beyond_1mi_count_sum",
+          "driving_low_vehicle_access_tract_count",
+          "straight_low_vehicle_access_tract_count",
+          "straight_no_vehicle_households_beyond_1mi_count_sum",
+          "snap_households_count_sum",
+          "places_routine_checkup_pct",
+          "driving_snap_households_beyond_1mi_count_sum",
+          "households_without_vehicle_count_sum",
+          "straight_snap_households_beyond_1mi_count_sum",
+          "housing_crowded_1_01_to_1_50_pct"
+        ],
+        "sdoh_domains": [
+          "Transportation",
+          "Economic Stability",
+          "Healthcare Access",
+          "Housing"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_medication_count",
+          "clinical_snf_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_emergency_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher low-access population indicates greater geographic transportation barriers to essential services.",
+            "relevance": "Transportation barriers may reduce access to healthcare and other essential community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_access_population_beyond_1mi_10mi_count_sum"
+          },
+          {
+            "factor": "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible driving distances may face increased transportation barriers.",
+            "relevance": "Limited transportation options can make healthcare access and appointment attendance more difficult.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "driving_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of low-vehicle-access tracts indicates greater community transportation vulnerability.",
+            "relevance": "Low vehicle access can limit healthcare and essential-service access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_low_vehicle_access_tract_count",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Low vehicle access at the tract level indicates increased transportation vulnerability.",
+            "relevance": "Limited vehicle access may create barriers to healthcare appointments and essential services.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_low_vehicle_access_tract_count"
+          },
+          {
+            "factor": "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "Households without vehicles located beyond accessible straight-line distances may face transportation barriers.",
+            "relevance": "Transportation limitations may interfere with healthcare access and continuity of care.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_no_vehicle_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "driving_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households located in low-access areas may face combined economic and transportation barriers.",
+            "relevance": "Combined economic and transportation barriers can compound difficulty accessing healthcare and basic resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_driving_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "straight_snap_households_beyond_1mi_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "SNAP households experiencing geographic access limitations may face combined socioeconomic and transportation barriers.",
+            "relevance": "Multiple barriers can compound difficulty accessing healthcare and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_straight_snap_households_beyond_1mi_count_sum"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 162.0,
+          "priority_band": "Critical",
+          "urgency": "Immediate",
+          "matched_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ],
+          "evidence_count": 8,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 8 identified SDOH factors.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 8 SDOH factors matched the intervention. The intervention has a priority score of 162 and a Critical priority level for a member with Very Low overall risk. The recommendation is supported by 8 supporting evidence records.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum",
+            "driving_low_access_population_beyond_1mi_10mi_count_sum",
+            "driving_no_vehicle_households_beyond_1mi_count_sum",
+            "driving_snap_households_beyond_1mi_count_sum",
+            "straight_no_vehicle_households_beyond_1mi_count_sum",
+            "straight_snap_households_beyond_1mi_count_sum",
+            "driving_low_vehicle_access_tract_count",
+            "straight_low_vehicle_access_tract_count"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "places_routine_checkup_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "places_routine_checkup_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 1 identified SDOH factor.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct"
+          ]
+        }
+      ]
+    },
+    {
+      "member_id": "d79ef414-f638-4bb9-305f-de6093018e34",
+      "graph_member_id": "member:d79ef414_f638_4bb9_305f_de6093018e34",
+      "risk_probability": 5.74665438134053e-05,
+      "risk_band": "Very Low",
+      "risk_rank": 105,
+      "risk_percentile": 3.7037037037037033,
+      "sdoh_factor_count": 11,
+      "sdoh_domain_count": 7,
+      "clinical_factor_count": 19,
+      "evidence_count": 11,
+      "intervention_candidate_count": 7,
+      "prioritized_intervention_count": 7,
+      "lambda_ranked_count": 7,
+      "recommendation_count": 7,
+      "risk_probability_match": true,
+      "risk_band_match": true,
+      "classification": "rich_context",
+      "status": "PASS",
+      "context": {
+        "sdoh_factors": [
+          "snap_households_count_sum",
+          "education_less_than_9th_pct",
+          "places_routine_checkup_pct",
+          "places_cholesterol_screening_pct",
+          "housing_crowded_1_01_to_1_50_pct",
+          "housing_crowded_1_51_plus_pct",
+          "households_without_vehicle_count_sum",
+          "places_poor_mental_health_pct",
+          "digital_with_broadband_pct",
+          "education_9th_to_12th_no_diploma_pct",
+          "places_physical_inactivity_pct"
+        ],
+        "sdoh_domains": [
+          "Economic Stability",
+          "Education Access",
+          "Healthcare Access",
+          "Housing",
+          "Transportation",
+          "Neighborhood and Built Environment",
+          "Digital Access"
+        ],
+        "clinical_factors": [
+          "clinical_immunization_count",
+          "clinical_unique_procedure_count",
+          "clinical_wellness_count",
+          "clinical_procedure_count",
+          "clinical_unique_immunization_count",
+          "clinical_unique_medication_count",
+          "clinical_medication_count",
+          "clinical_observation_count",
+          "clinical_unique_observation_count",
+          "clinical_unique_condition_description_count",
+          "clinical_unique_condition_count",
+          "clinical_emergency_count",
+          "clinical_unique_careplan_count",
+          "clinical_outpatient_count",
+          "clinical_condition_count",
+          "clinical_careplan_count",
+          "clinical_ambulatory_count",
+          "clinical_history_days",
+          "clinical_encounter_count"
+        ],
+        "evidence_records": [
+          {
+            "factor": "snap_households_count_sum",
+            "domain": "economic_stability",
+            "evidence_type": "Social vulnerability indicator",
+            "statement": "Higher SNAP household concentration indicates greater community-level economic vulnerability.",
+            "relevance": "Economic instability can create barriers to maintaining healthcare access and meeting basic needs.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_snap_households_count_sum"
+          },
+          {
+            "factor": "education_less_than_9th_pct",
+            "domain": "education_access",
+            "evidence_type": "Education access indicator",
+            "statement": "A higher proportion of adults with less than a ninth-grade education indicates lower educational attainment.",
+            "relevance": "Lower educational attainment may create barriers to health literacy, healthcare navigation, and understanding health information.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_education_less_than_9th_pct"
+          },
+          {
+            "factor": "places_routine_checkup_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Routine checkup prevalence provides an indicator of preventive healthcare utilization.",
+            "relevance": "Lower preventive-care utilization may indicate barriers to routine healthcare engagement.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_routine_checkup_pct"
+          },
+          {
+            "factor": "places_cholesterol_screening_pct",
+            "domain": "healthcare_access",
+            "evidence_type": "Preventive-care indicator",
+            "statement": "Cholesterol screening prevalence provides an indicator of preventive healthcare engagement.",
+            "relevance": "Lower screening utilization may indicate barriers to preventive healthcare access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_cholesterol_screening_pct"
+          },
+          {
+            "factor": "housing_crowded_1_01_to_1_50_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of households with moderate overcrowding indicates increased housing pressure.",
+            "relevance": "Crowded housing conditions can affect health, privacy, stress, and exposure to illness.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_01_to_1_50_pct"
+          },
+          {
+            "factor": "housing_crowded_1_51_plus_pct",
+            "domain": "housing",
+            "evidence_type": "Housing stability indicator",
+            "statement": "A higher proportion of severely overcrowded households indicates significant housing pressure.",
+            "relevance": "Severe overcrowding may increase health risks and indicate housing instability.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_housing_crowded_1_51_plus_pct"
+          },
+          {
+            "factor": "households_without_vehicle_count_sum",
+            "domain": "transportation",
+            "evidence_type": "Transportation access indicator",
+            "statement": "A higher number of households without a vehicle indicates greater potential transportation vulnerability.",
+            "relevance": "Limited vehicle access may make it harder to reach healthcare services, employment, food, and community resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_households_without_vehicle_count_sum"
+          },
+          {
+            "factor": "places_poor_mental_health_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher prevalence of poor mental health indicates greater community-level mental health burden.",
+            "relevance": "Community mental health burden may indicate increased need for behavioral-health and community-support resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_poor_mental_health_pct"
+          },
+          {
+            "factor": "digital_with_broadband_pct",
+            "domain": "digital_access",
+            "evidence_type": "Digital access indicator",
+            "statement": "Broadband access provides an indicator of community digital connectivity.",
+            "relevance": "Limited broadband access can restrict telehealth and digital healthcare access.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_digital_with_broadband_pct"
+          },
+          {
+            "factor": "education_9th_to_12th_no_diploma_pct",
+            "domain": "education_access",
+            "evidence_type": "Education access indicator",
+            "statement": "A higher proportion of adults completing ninth through twelfth grade without a diploma indicates lower educational attainment.",
+            "relevance": "Lower educational attainment can affect health literacy and ability to navigate healthcare resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_education_9th_to_12th_no_diploma_pct"
+          },
+          {
+            "factor": "places_physical_inactivity_pct",
+            "domain": "neighborhood_built_environment",
+            "evidence_type": "Community health indicator",
+            "statement": "Higher physical inactivity prevalence indicates greater community-level inactivity burden.",
+            "relevance": "Physical inactivity may contribute to chronic disease risk and indicates potential need for wellness resources.",
+            "intervention_link": true,
+            "source": "SDOH knowledge base",
+            "version": "1.0.0",
+            "_registry_id": "evidence_places_physical_inactivity_pct"
+          }
+        ]
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "intervention_id": "INT_EDUCATION_SUPPORT",
+          "intervention_name": "Health education and literacy support",
+          "domain": "Education Access",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "education_less_than_9th_pct",
+            "education_9th_to_12th_no_diploma_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Health education and literacy support for the Education Access domain, addressing 2 identified SDOH factors.",
+          "rationale": "Health education and literacy support is recommended for the Education Access domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very Low overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "education_less_than_9th_pct",
+            "education_9th_to_12th_no_diploma_pct"
+          ]
+        },
+        {
+          "rank": 2,
+          "intervention_id": "INT_HEALTHCARE_ACCESS",
+          "intervention_name": "Healthcare navigation and preventive-care support",
+          "domain": "Healthcare Access",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "places_routine_checkup_pct",
+            "places_cholesterol_screening_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Healthcare navigation and preventive-care support for the Healthcare Access domain, addressing 2 identified SDOH factors.",
+          "rationale": "Healthcare navigation and preventive-care support is recommended for the Healthcare Access domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very Low overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "places_routine_checkup_pct",
+            "places_cholesterol_screening_pct"
+          ]
+        },
+        {
+          "rank": 3,
+          "intervention_id": "INT_HEALTH_ENVIRONMENT",
+          "intervention_name": "Community health and healthy-environment support",
+          "domain": "Neighborhood and Built Environment",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "places_physical_inactivity_pct",
+            "places_poor_mental_health_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Community health and healthy-environment support for the Neighborhood and Built Environment domain, addressing 2 identified SDOH factors.",
+          "rationale": "Community health and healthy-environment support is recommended for the Neighborhood and Built Environment domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very Low overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "places_physical_inactivity_pct",
+            "places_poor_mental_health_pct"
+          ]
+        },
+        {
+          "rank": 4,
+          "intervention_id": "INT_HOUSING_STABILITY",
+          "intervention_name": "Housing stability and housing-support referral",
+          "domain": "Housing",
+          "priority_score": 42.0,
+          "priority_band": "High",
+          "urgency": "High",
+          "matched_factors": [
+            "housing_crowded_1_01_to_1_50_pct",
+            "housing_crowded_1_51_plus_pct"
+          ],
+          "evidence_count": 2,
+          "evidence_ids": [],
+          "action": "Consider Housing stability and housing-support referral for the Housing domain, addressing 2 identified SDOH factors.",
+          "rationale": "Housing stability and housing-support referral is recommended for the Housing domain because 2 SDOH factors matched the intervention. The intervention has a priority score of 42 and a High priority level for a member with Very Low overall risk. The recommendation is supported by 2 supporting evidence records.",
+          "supporting_factors": [
+            "housing_crowded_1_01_to_1_50_pct",
+            "housing_crowded_1_51_plus_pct"
+          ]
+        },
+        {
+          "rank": 5,
+          "intervention_id": "INT_DIGITAL_ACCESS",
+          "intervention_name": "Digital-access and telehealth support",
+          "domain": "Digital Access",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "digital_with_broadband_pct"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Digital-access and telehealth support for the Digital Access domain, addressing 1 identified SDOH factor.",
+          "rationale": "Digital-access and telehealth support is recommended for the Digital Access domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "digital_with_broadband_pct"
+          ]
+        },
+        {
+          "rank": 6,
+          "intervention_id": "INT_ECONOMIC_BENEFITS",
+          "intervention_name": "Financial assistance and benefits navigation",
+          "domain": "Economic Stability",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "snap_households_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Financial assistance and benefits navigation for the Economic Stability domain, addressing 1 identified SDOH factor.",
+          "rationale": "Financial assistance and benefits navigation is recommended for the Economic Stability domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "snap_households_count_sum"
+          ]
+        },
+        {
+          "rank": 7,
+          "intervention_id": "INT_TRANSPORTATION",
+          "intervention_name": "Transportation assistance for healthcare access",
+          "domain": "Transportation",
+          "priority_score": 22.0,
+          "priority_band": "Moderate",
+          "urgency": "Moderate",
+          "matched_factors": [
+            "households_without_vehicle_count_sum"
+          ],
+          "evidence_count": 1,
+          "evidence_ids": [],
+          "action": "Consider Transportation assistance for healthcare access for the Transportation domain, addressing 1 identified SDOH factor.",
+          "rationale": "Transportation assistance for healthcare access is recommended for the Transportation domain because 1 SDOH factor matched the intervention. The intervention has a priority score of 22 and a Moderate priority level for a member with Very Low overall risk. The recommendation is supported by 1 supporting evidence record.",
+          "supporting_factors": [
+            "households_without_vehicle_count_sum"
+          ]
+        }
+      ]
+    }
+  ]
+}
