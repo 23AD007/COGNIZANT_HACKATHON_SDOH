@@ -57,7 +57,7 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-RAW_DIR = PROJECT_ROOT / "data" / "raw" / "synthea"
+RAW_DIR = PROJECT_ROOT / "data" / "raw" / "synthea_combined"
 
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 

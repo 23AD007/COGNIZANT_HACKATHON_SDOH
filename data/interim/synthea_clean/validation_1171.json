@@ -1,0 +1,73 @@
+{
+  "reference_date": "2025-01-01",
+  "source": "Synthea patient/member table",
+  "raw_row_count": 1171,
+  "raw_column_count": 25,
+  "cleaned_row_count": 1171,
+  "cleaned_column_count": 15,
+  "missing_values": {
+    "member_id": 0,
+    "birthdate": 0,
+    "age": 0,
+    "gender": 0,
+    "race": 0,
+    "ethnicity": 0,
+    "marital_status": 380,
+    "city": 0,
+    "state": 0,
+    "zip": 543,
+    "county": 0,
+    "fips": 1171,
+    "county_fips": 1171,
+    "lat": 0,
+    "lon": 0
+  },
+  "duplicate_member_ids_in_source": 0,
+  "duplicate_member_ids_in_output": 0,
+  "invalid_dates_in_source": 0,
+  "invalid_ages_in_source": 0,
+  "rows_dropped_missing_member_id": 0,
+  "rows_dropped_duplicate_member_id": 0,
+  "geographic_coverage": {
+    "city": {
+      "non_missing_count": 1171,
+      "missing_count": 0,
+      "coverage_pct": 100.0
+    },
+    "state": {
+      "non_missing_count": 1171,
+      "missing_count": 0,
+      "coverage_pct": 100.0
+    },
+    "zip": {
+      "non_missing_count": 628,
+      "missing_count": 543,
+      "coverage_pct": 53.63
+    },
+    "county": {
+      "non_missing_count": 1171,
+      "missing_count": 0,
+      "coverage_pct": 100.0
+    },
+    "fips": {
+      "non_missing_count": 0,
+      "missing_count": 1171,
+      "coverage_pct": 0.0
+    },
+    "county_fips": {
+      "non_missing_count": 0,
+      "missing_count": 1171,
+      "coverage_pct": 0.0
+    },
+    "lat": {
+      "non_missing_count": 1171,
+      "missing_count": 0,
+      "coverage_pct": 100.0
+    },
+    "lon": {
+      "non_missing_count": 1171,
+      "missing_count": 0,
+      "coverage_pct": 100.0
+    }
+  }
+}
