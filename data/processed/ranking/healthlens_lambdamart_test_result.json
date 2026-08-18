@@ -1,0 +1,92 @@
+{
+  "member_id": "member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061",
+  "model_version": "1.0.0",
+  "feature_columns": [
+    "risk_probability",
+    "risk_band_score",
+    "sdoh_factor_count",
+    "sdoh_domain_count",
+    "clinical_factor_count",
+    "evidence_count",
+    "matched_factor_count",
+    "factor_match_ratio",
+    "intervention_context_score",
+    "baseline_priority_score",
+    "evidence_match_count",
+    "evidence_density",
+    "risk_x_matched_factors",
+    "risk_x_context_score",
+    "clinical_x_sdoh",
+    "evidence_x_matched_factors",
+    "candidate_rank"
+  ],
+  "backend": "deterministic_baseline",
+  "candidates": [
+    {
+      "intervention_id": "INT_HEALTH_ENVIRONMENT",
+      "intervention_name": "Community health and healthy-environment support",
+      "domain": "Neighborhood and Built Environment",
+      "model_score": 34.89975399387531,
+      "rank": 1,
+      "baseline_score": 51.0,
+      "baseline_rank": 1,
+      "matched_factor_count": 5,
+      "evidence_match_count": 5
+    },
+    {
+      "intervention_id": "INT_HOUSING_STABILITY",
+      "intervention_name": "Housing stability and housing-support referral",
+      "domain": "Housing",
+      "model_score": 28.049802388522785,
+      "rank": 2,
+      "baseline_score": 41.0,
+      "baseline_rank": 2,
+      "matched_factor_count": 4,
+      "evidence_match_count": 4
+    },
+    {
+      "intervention_id": "INT_TRANSPORTATION",
+      "intervention_name": "Transportation assistance for healthcare access",
+      "domain": "Transportation",
+      "model_score": 28.049802388522785,
+      "rank": 3,
+      "baseline_score": 41.0,
+      "baseline_rank": 3,
+      "matched_factor_count": 4,
+      "evidence_match_count": 4
+    },
+    {
+      "intervention_id": "INT_HEALTHCARE_ACCESS",
+      "intervention_name": "Healthcare navigation and preventive-care support",
+      "domain": "Healthcare Access",
+      "model_score": 14.349899177817749,
+      "rank": 4,
+      "baseline_score": 21.0,
+      "baseline_rank": 4,
+      "matched_factor_count": 2,
+      "evidence_match_count": 2
+    },
+    {
+      "intervention_id": "INT_ECONOMIC_BENEFITS",
+      "intervention_name": "Financial assistance and benefits navigation",
+      "domain": "Economic Stability",
+      "model_score": 7.499947572465229,
+      "rank": 5,
+      "baseline_score": 11.0,
+      "baseline_rank": 5,
+      "matched_factor_count": 1,
+      "evidence_match_count": 1
+    },
+    {
+      "intervention_id": "INT_EDUCATION_SUPPORT",
+      "intervention_name": "Health education and literacy support",
+      "domain": "Education Access",
+      "model_score": 7.499947572465229,
+      "rank": 6,
+      "baseline_score": 11.0,
+      "baseline_rank": 6,
+      "matched_factor_count": 1,
+      "evidence_match_count": 1
+    }
+  ]
+}

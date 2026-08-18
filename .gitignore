@@ -1,0 +1,33 @@
+# Python / environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Large project data artifacts
+data/
+!data/
+!data/interim/
+!data/interim/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+outputs/
+*.csv
+*.xlsx
+*.zip
+*.geojson
+*.parquet
+data/raw
+.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local configuration and notebook state
+.env
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
