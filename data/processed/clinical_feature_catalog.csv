@@ -1,0 +1,27 @@
+feature,category,description
+clinical_encounter_count,Clinical utilization,Number of encounters before index date
+clinical_inpatient_history_count,Clinical utilization,Historical inpatient encounters before index date
+clinical_emergency_count,Clinical utilization,Historical emergency encounters before index date
+clinical_outpatient_count,Clinical utilization,Historical outpatient encounters before index date
+clinical_ambulatory_count,Clinical utilization,Historical ambulatory encounters before index date
+clinical_urgentcare_count,Clinical utilization,Historical urgent-care encounters before index date
+clinical_wellness_count,Clinical utilization,Historical wellness encounters before index date
+clinical_home_count,Clinical utilization,Historical home encounters before index date
+clinical_snf_count,Clinical utilization,Historical skilled-nursing encounters before index date
+clinical_hospice_count,Clinical utilization,Historical hospice encounters before index date
+clinical_condition_count,Clinical burden,Number of historical condition records
+clinical_unique_condition_count,Clinical burden,Number of unique historical condition codes
+clinical_unique_condition_description_count,Clinical burden,Number of unique historical condition descriptions
+clinical_observation_count,Clinical monitoring,Number of historical observations
+clinical_unique_observation_count,Clinical monitoring,Number of unique observation codes
+clinical_medication_count,Medication burden,Number of historical medication records
+clinical_unique_medication_count,Medication burden,Number of unique historical medication codes
+clinical_procedure_count,Clinical utilization,Number of historical procedures
+clinical_unique_procedure_count,Clinical utilization,Number of unique historical procedure codes
+clinical_allergy_count,Clinical complexity,Number of historical allergy records
+clinical_unique_allergy_count,Clinical complexity,Number of unique historical allergy codes
+clinical_immunization_count,Preventive care,Number of historical immunization records
+clinical_unique_immunization_count,Preventive care,Number of unique historical immunization codes
+clinical_careplan_count,Care management,Number of historical care plans
+clinical_unique_careplan_count,Care management,Number of unique historical care-plan codes
+clinical_history_days,Temporal context,Number of days of observed clinical history

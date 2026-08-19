@@ -1,0 +1,9 @@
+table,input_file,output_file,rows,columns,geo_column
+DP02,ACSDP1Y2024.DP02-Data.csv,dp02_clean.csv,2,311,GEO_ID
+DP03,ACSDP1Y2024.DP03-Data.csv,dp03_clean.csv,2,277,GEO_ID
+DP04,ACSDP1Y2024.DP04-Data.csv,dp04_clean.csv,2,289,GEO_ID
+DP05,ACSDP1Y2024.DP05-Data.csv,dp05_clean.csv,2,219,GEO_ID
+S0101,ACSST1Y2024.S0101-Data.csv,s0101_clean.csv,2,231,GEO_ID
+S1501,ACSST1Y2024.S1501-Data.csv,s1501_clean.csv,2,387,GEO_ID
+S1701,ACSST1Y2024.S1701-Data.csv,s1701_clean.csv,2,189,GEO_ID
+S1901,ACSST1Y2024.S1901-Data.csv,s1901_clean.csv,2,67,GEO_ID

@@ -1,0 +1,8 @@
+check,passed,detail
+graph_has_nodes,True,nodes=2246
+graph_has_edges,True,edges=3407
+no_dangling_edges,True,dangling=0
+unique_node_ids,True,nodes=2246
+unique_edge_ids,True,edges=3407
+member_nodes_present,True,members=108
+missing_counties_allowed,True,members without county=21

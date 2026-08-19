@@ -1,0 +1,5 @@
+candidate_outcome,source,type,independent_of_sdoh,available
+encounter_count,encounters.csv,utilization,True,True
+encounter_class,encounters.csv,encounter_type,True,True
+condition_occurrence,conditions.csv,clinical_condition,True,True
+procedure_occurrence,procedures.csv,clinical_procedure,True,True

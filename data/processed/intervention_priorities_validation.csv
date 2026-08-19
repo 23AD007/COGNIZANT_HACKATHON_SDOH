@@ -1,0 +1,10 @@
+check,value,status
+row_count,108,PASS
+unique_members,108,PASS
+missing_risk_probability,0,PASS
+risk_probability_out_of_range,0,PASS
+missing_primary_domain,0,PASS
+missing_intervention,0,PASS
+factor_score_columns,40,PASS
+domain_score_columns,7,PASS
+duplicate_member_ids,0,PASS

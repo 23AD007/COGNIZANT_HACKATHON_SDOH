@@ -1,0 +1,13 @@
+member_id,graph_member_id,risk_probability,risk_band,risk_rank,risk_percentile,sdoh_factor_count,sdoh_domain_count,clinical_factor_count,evidence_count,intervention_candidate_count,prioritized_intervention_count,lambda_ranked_count,recommendation_count,risk_probability_match,risk_band_match,classification,status
+1e7909f8-39b2-3c7e-1fda-a6c3256dc061,member:1e7909f8_39b2_3c7e_1fda_a6c3256dc061,0.9999193422541974,Very High,1,100.0,17,6,9,17,6,6,6,6,True,True,rich_context,PASS
+688c8453-ba6f-7dec-03c3-eaa27d6df1a4,member:688c8453_ba6f_7dec_03c3_eaa27d6df1a4,0.9998982569477148,Very High,2,99.07407407407408,4,2,9,4,2,2,2,2,True,True,partial_context,PASS
+7ad140ab-bfae-c3ae-20a3-2244b1c4d0e2,member:7ad140ab_bfae_c3ae_20a3_2244b1c4d0e2,0.999896111749114,Very High,3,98.14814814814817,11,7,8,11,7,7,7,7,True,True,rich_context,PASS
+9277390b-8a92-52e1-4d99-bb4849bac775,member:9277390b_8a92_52e1_4d99_bb4849bac775,0.9998947830736032,Very High,4,97.2222222222222,11,4,7,11,4,4,4,4,True,True,rich_context,PASS
+a172af40-3eeb-e33a-f4eb-bcf071ed5299,member:a172af40_3eeb_e33a_f4eb_bcf071ed5299,0.0068399962811337,High,32,71.29629629629629,0,0,20,0,0,0,0,0,True,True,clinical_only,PASS
+ba234ff2-cefe-dfee-935a-8ea2378da8c2,member:ba234ff2_cefe_dfee_935a_8ea2378da8c2,0.005736517721955,High,33,70.37037037037037,11,4,20,11,4,4,4,4,True,True,rich_context,PASS
+20447ad5-5095-fb78-2bd9-69bf39242b4a,member:20447ad5_5095_fb78_2bd9_69bf39242b4a,0.0049598737828469,High,34,69.44444444444444,11,4,19,11,4,4,4,4,True,True,rich_context,PASS
+53e4891a-9108-67ef-d973-3b6a98404249,member:53e4891a_9108_67ef_d973_3b6a98404249,0.0041781052827664,High,35,68.51851851851852,11,4,20,11,4,4,4,4,True,True,rich_context,PASS
+38389261-1bb1-5848-dbed-abbae41b2b6a,member:38389261_1bb1_5848_dbed_abbae41b2b6a,5.288637495908405e-05,Very Low,108,0.9259259259259258,14,3,20,14,3,3,3,3,True,True,rich_context,PASS
+4c756282-9faf-4e7b-1689-3e3a3cb39537,member:4c756282_9faf_4e7b_1689_3e3a3cb39537,5.567914277419334e-05,Very Low,107,1.851851851851852,14,5,20,14,5,5,5,5,True,True,rich_context,PASS
+1d9a4ec2-5e53-d852-ef66-d4de1671f6d8,member:1d9a4ec2_5e53_d852_ef66_d4de1671f6d8,5.571177461446286e-05,Very Low,106,2.7777777777777777,11,4,20,11,4,4,4,4,True,True,rich_context,PASS
+d79ef414-f638-4bb9-305f-de6093018e34,member:d79ef414_f638_4bb9_305f_de6093018e34,5.74665438134053e-05,Very Low,105,3.7037037037037033,11,7,19,11,7,7,7,7,True,True,rich_context,PASS

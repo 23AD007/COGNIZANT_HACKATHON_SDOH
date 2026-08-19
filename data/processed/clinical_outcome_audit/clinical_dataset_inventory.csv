@@ -1,0 +1,10 @@
+dataset,file,exists,rows,columns,member_id_column,unique_members,date_columns
+patients,patients.csv,True,108,28,Id,108,BIRTHDATE|DEATHDATE
+encounters,encounters.csv,True,5473,15,Id,5473,START|STOP
+conditions,conditions.csv,True,3784,7,PATIENT,108,START|STOP
+observations,observations.csv,True,75343,9,PATIENT,108,DATE
+medications,medications.csv,True,4522,13,PATIENT,105,START|STOP
+procedures,procedures.csv,True,15985,10,PATIENT,108,START|STOP
+allergies,allergies.csv,True,134,15,PATIENT,22,START|STOP
+immunizations,immunizations.csv,True,1731,6,PATIENT,108,DATE
+careplans,careplans.csv,True,336,9,Id,336,START|STOP

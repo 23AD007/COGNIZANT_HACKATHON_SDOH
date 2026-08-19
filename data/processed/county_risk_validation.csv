@@ -1,0 +1,7 @@
+metric,value
+total_members,108.0
+members_with_county,87.0
+members_without_county,21.0
+county_resolution_pct,80.55555555555556
+counties_generated,13.0
+total_members_used_for_county_risk,87.0
