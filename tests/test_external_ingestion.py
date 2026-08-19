@@ -1,15 +1,12 @@
-import json
-import io
-
 import pandas as pd
 
+from backend.database import database_url
+from backend.main import app, health
 from src.ingestion.canonical_schema import CanonicalSchema
 from src.ingestion.external_ingestion import ingest_file
 from src.ingestion.persistence import IngestionStore
 from src.ingestion.semantic_mapping import SemanticMapper
 from src.ingestion.training_jobs import TrainingJobService
-from backend.app import create_app
-from backend.database import database_url
 
 
 def schema():
@@ -56,24 +53,15 @@ def test_persistence_and_safe_candidate_job(tmp_path):
     assert job["result"]["promotion"] == "NOT_ELIGIBLE"
 
 
-def test_flask_upload_and_training_job_lifecycle(tmp_path):
-    store = IngestionStore(f"sqlite:///{tmp_path / 'api.sqlite'}")
-    client = create_app(store).test_client()
-    response = client.post(
-        "/datasets",
-        data={"file": (io.BytesIO(b"member_id,age\nmember-1,42\n"), "members.csv")},
-        content_type="multipart/form-data",
-    )
-    assert response.status_code == 201
-    dataset_id = response.get_json()["dataset_id"]
-    job_response = client.post(f"/datasets/{dataset_id}/training-jobs")
-    assert job_response.status_code == 202
-    assert client.get(f"/training-jobs/{job_response.get_json()['job_id']}").status_code == 200
+def test_fastapi_health_endpoint_uses_current_entry_point():
+    health_route = next(route for route in app.routes if getattr(route, "path", None) == "/health")
+    assert "GET" in health_route.methods
+    assert health() == {"status": "healthy"}
 
 
 def test_explicit_development_sqlite(monkeypatch):
     monkeypatch.delenv("DATABASE_URL", raising=False)
     for name in ("DB_HOST", "DB_NAME", "DB_USER", "DB_PASSWORD"):
         monkeypatch.delenv(name, raising=False)
-    monkeypatch.setenv("FLASK_ENV", "development")
+    monkeypatch.setenv("APP_ENV", "development")
     assert database_url().startswith("sqlite:///")
