@@ -53,6 +53,7 @@ from __future__ import annotations
 
 import json
 import pickle
+import sys
 import warnings
 
 from dataclasses import dataclass
@@ -990,6 +991,11 @@ def load_artifacts(
             "Trained member-risk model not found:\n"
             f"{model_path}"
         )
+
+    # Existing artifacts created by running this module as ``__main__``
+    # pickle the container under that module name. Make the current class
+    # available there so backend imports can load the unchanged artifact.
+    setattr(sys.modules["__main__"], "ModelArtifact", ModelArtifact)
 
     with model_path.open(
         "rb"

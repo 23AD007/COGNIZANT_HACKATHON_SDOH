@@ -40,7 +40,10 @@ def get_clinical(db: Session, member_id: str) -> dict[str, Any] | None:
 
 
 def get_location(db: Session, member_id: str) -> dict[str, Any] | None:
-    return _record(db.execute(text("""
+    location = _record(db.execute(text("""
         SELECT member_id, lat, lon, county, county_fips, city, state
         FROM member_model_features WHERE member_id = :member_id
     """), {"member_id": member_id}).mappings().first())
+    if location is not None and location["county_fips"] is not None:
+        location["county_fips"] = str(location["county_fips"]).zfill(5)
+    return location

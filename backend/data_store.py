@@ -22,6 +22,8 @@ ARTIFACT_TABLES = {
     "member_model_features": "member_model_features.csv",
     "member_sdoh_features": "member_sdoh_features.csv",
 }
+MODEL_SDOH_ARTIFACT = PROCESSED_DIR / "member_sdoh_model_features.csv"
+MODEL_SCHEMA_ARTIFACT = PROCESSED_DIR / "models" / "member_risk_feature_schema.json"
 
 RECOMMENDATION_ARTIFACT = (
     PROCESSED_DIR / "recommendations" / "healthlens_lambdamart_recommendations.json"
@@ -53,6 +55,29 @@ def initialize_development_database(engine: Engine) -> None:
             f"model_only={len(model_ids - sdoh_ids)}, sdoh_only={len(sdoh_ids - model_ids)}"
         )
 
+    if not MODEL_SDOH_ARTIFACT.exists():
+        raise FileNotFoundError(f"Required model-SDOH artifact is missing: {MODEL_SDOH_ARTIFACT}")
+    model_sdoh = pd.read_csv(MODEL_SDOH_ARTIFACT)
+    if "member_id" not in model_sdoh.columns or not model_sdoh["member_id"].is_unique:
+        raise ValueError("member_sdoh_model_features.csv must have unique member_id values")
+    model_sdoh_ids = set(model_sdoh["member_id"])
+    if model_ids != model_sdoh_ids:
+        raise ValueError(
+            "Member-model and model-SDOH artifacts have mismatched member_id coverage: "
+            f"model_only={len(model_ids - model_sdoh_ids)}, "
+            f"model_sdoh_only={len(model_sdoh_ids - model_ids)}"
+        )
+
+    if not MODEL_SCHEMA_ARTIFACT.exists():
+        raise FileNotFoundError(f"Required model schema is missing: {MODEL_SCHEMA_ARTIFACT}")
+    schema = json.loads(MODEL_SCHEMA_ARTIFACT.read_text(encoding="utf-8"))
+    feature_columns = schema.get("feature_columns", [])
+    if schema.get("feature_count") != len(feature_columns):
+        raise ValueError("Model schema feature_count does not match feature_columns")
+    missing_features = set(feature_columns) - set(frames["member_model_features"].columns)
+    if missing_features:
+        raise ValueError(f"Member-model artifact lacks schema features: {sorted(missing_features)}")
+
     model_frame = frames["member_model_features"]
     clinical_columns = [
         column for column in model_frame.columns
@@ -80,3 +105,4 @@ def initialize_development_database(engine: Engine) -> None:
             connection.execute(
                 text(f'CREATE INDEX IF NOT EXISTS "ix_{table_name}_member_id" '
                      f'ON "{table_name}" (member_id)')
+            )

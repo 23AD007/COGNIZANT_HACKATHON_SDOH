@@ -78,6 +78,46 @@ def clean_text(series: pd.Series) -> pd.Series:
     return series.astype("string").str.strip().replace("", pd.NA)
 
 
+def _county_lookup_key(values: pd.Series) -> pd.Series:
+    """Normalize authoritative county names for a state/county reference join."""
+    return (
+        clean_text(values)
+        .str.replace(r"\s+County$", "", regex=True)
+        .str.replace(r"[^0-9A-Za-z]+", "", regex=True)
+        .str.lower()
+    )
+
+
+def fill_missing_county_fips(cleaned: pd.DataFrame, county_reference_path: Path) -> pd.DataFrame:
+    """Fill only absent FIPS values using an unambiguous county/state reference."""
+    if not county_reference_path.exists():
+        return cleaned
+    reference = pd.read_csv(county_reference_path, dtype={"county_fips": "string"})
+    required = {"county_fips", "county_name", "state_name"}
+    if not required.issubset(reference.columns):
+        raise ValueError(f"County reference lacks columns: {sorted(required - set(reference.columns))}")
+    reference = reference.copy()
+    reference["county_fips"] = normalize_county_fips_series(reference["county_fips"])
+    reference["_county_key"] = _county_lookup_key(reference["county_name"])
+    reference["_state_key"] = clean_text(reference["state_name"]).str.lower()
+    reference = reference[["_county_key", "_state_key", "county_fips"]].drop_duplicates()
+    # County-equivalent jurisdictions can share a name with an incorporated
+    # city (for example Baltimore County and Baltimore city).  Such keys are
+    # deliberately unavailable as fallback candidates rather than making
+    # unrelated, unambiguous county mappings fail.
+    unique_reference_keys = ~reference.duplicated(
+        ["_county_key", "_state_key"], keep=False
+    )
+    reference = reference.loc[unique_reference_keys].copy()
+    result = cleaned.copy()
+    result["_county_key"] = _county_lookup_key(result["county"])
+    result["_state_key"] = clean_text(result["state"]).str.lower()
+    result = result.merge(reference, on=["_county_key", "_state_key"], how="left", validate="many_to_one", suffixes=("", "_reference"))
+    missing = result["county_fips"].isna()
+    result.loc[missing, "county_fips"] = result.loc[missing, "county_fips_reference"]
+    return result.drop(columns=["_county_key", "_state_key", "county_fips_reference"])
+
+
 def build_validation_report(
     cleaned: pd.DataFrame,
     raw_row_count: int,
@@ -165,6 +205,10 @@ def preprocess_synthea(
     # Preserve the raw Synthea FIPS field and expose a separately normalized
     # county key for county-level joins. This never assigns or derives a tract.
     cleaned["county_fips"] = normalize_county_fips_series(cleaned["fips"])
+    cleaned = fill_missing_county_fips(
+        cleaned,
+        Path("data/processed/county_features.csv"),
+    )
     invalid_age = cleaned["age"].isna() | (cleaned["age"] < 0) | (cleaned["age"] > MAX_VALID_AGE)
     invalid_age_count = int(invalid_age.sum())
     cleaned.loc[invalid_age, "age"] = pd.NA
