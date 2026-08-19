@@ -515,11 +515,20 @@ class ContextualReasoner:
 
         for candidate in self._member_nodes:
 
-            candidate_id = _node_id(
-                candidate
+            properties = candidate.get(
+                "properties",
+                {}
             )
 
-            if candidate_id == requested:
+            candidate_member_id = properties.get(
+                "member_id"
+            )
+
+            if (
+                candidate_member_id is not None
+                and str(candidate_member_id).strip()
+                == requested
+            ):
                 return candidate
 
         return None
