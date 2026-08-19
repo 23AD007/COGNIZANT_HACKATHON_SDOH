@@ -1,0 +1,1516 @@
+{
+  "methodology": "Current member-risk aggregation and population SDOH prioritization; not member reasoner output.",
+  "input_fingerprint": "7278ad8f809e8ee669b1f1d7b1d3f68afba4ab9b4f508646b9feffdcc18a3e27",
+  "data": {
+    "risk": {
+      "25001": {
+        "member_count": 49,
+        "risk_member_count": 49,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.43774566973097884,
+        "median_risk": 0.19775109924777085,
+        "high_risk_count": 0,
+        "very_high_risk_count": 20,
+        "high_or_very_high_count": 20,
+        "high_or_very_high_percentage": 0.40816326530612246,
+        "risk_band": "Moderate",
+        "risk_distribution": {
+          "Low": 3,
+          "Very High": 20,
+          "Very Low": 26
+        }
+      },
+      "25003": {
+        "member_count": 26,
+        "risk_member_count": 26,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.2534359016238063,
+        "median_risk": 0.03076644262081031,
+        "high_risk_count": 0,
+        "very_high_risk_count": 6,
+        "high_or_very_high_count": 6,
+        "high_or_very_high_percentage": 0.23076923076923078,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "Low": 1,
+          "Very High": 6,
+          "Very Low": 19
+        }
+      },
+      "25005": {
+        "member_count": 108,
+        "risk_member_count": 108,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.28258198504983134,
+        "median_risk": 0.032207430928603294,
+        "high_risk_count": 0,
+        "very_high_risk_count": 28,
+        "high_or_very_high_count": 28,
+        "high_or_very_high_percentage": 0.25925925925925924,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "Low": 3,
+          "Very High": 28,
+          "Very Low": 77
+        }
+      },
+      "25007": {
+        "member_count": 7,
+        "risk_member_count": 7,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.3354405837159971,
+        "median_risk": 0.13448616898501398,
+        "high_risk_count": 0,
+        "very_high_risk_count": 2,
+        "high_or_very_high_count": 2,
+        "high_or_very_high_percentage": 0.2857142857142857,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "Very High": 2,
+          "Very Low": 5
+        }
+      },
+      "25009": {
+        "member_count": 124,
+        "risk_member_count": 124,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.28234342051925765,
+        "median_risk": 0.044812158010646114,
+        "high_risk_count": 1,
+        "very_high_risk_count": 31,
+        "high_or_very_high_count": 32,
+        "high_or_very_high_percentage": 0.25806451612903225,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "High": 1,
+          "Low": 3,
+          "Very High": 31,
+          "Very Low": 89
+        }
+      },
+      "25011": {
+        "member_count": 17,
+        "risk_member_count": 17,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.3194038604203116,
+        "median_risk": 0.059281793035645076,
+        "high_risk_count": 0,
+        "very_high_risk_count": 5,
+        "high_or_very_high_count": 5,
+        "high_or_very_high_percentage": 0.29411764705882354,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "Very High": 5,
+          "Very Low": 12
+        }
+      },
+      "25013": {
+        "member_count": 87,
+        "risk_member_count": 87,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.3384124057223703,
+        "median_risk": 0.046994531445689096,
+        "high_risk_count": 1,
+        "very_high_risk_count": 27,
+        "high_or_very_high_count": 28,
+        "high_or_very_high_percentage": 0.3218390804597701,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "High": 1,
+          "Low": 4,
+          "Very High": 27,
+          "Very Low": 55
+        }
+      },
+      "25015": {
+        "member_count": 39,
+        "risk_member_count": 39,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.2840110812253167,
+        "median_risk": 0.06374875780294886,
+        "high_risk_count": 2,
+        "very_high_risk_count": 8,
+        "high_or_very_high_count": 10,
+        "high_or_very_high_percentage": 0.2564102564102564,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "High": 2,
+          "Low": 2,
+          "Very High": 8,
+          "Very Low": 27
+        }
+      },
+      "25017": {
+        "member_count": 283,
+        "risk_member_count": 283,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.250033870909251,
+        "median_risk": 0.038250705281764885,
+        "high_risk_count": 2,
+        "very_high_risk_count": 62,
+        "high_or_very_high_count": 64,
+        "high_or_very_high_percentage": 0.22614840989399293,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "High": 2,
+          "Low": 9,
+          "Very High": 62,
+          "Very Low": 210
+        }
+      },
+      "25019": {
+        "member_count": 2,
+        "risk_member_count": 2,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.008895002622734937,
+        "median_risk": 0.008895002622734937,
+        "high_risk_count": 0,
+        "very_high_risk_count": 0,
+        "high_or_very_high_count": 0,
+        "high_or_very_high_percentage": 0.0,
+        "risk_band": "Very Low",
+        "risk_distribution": {
+          "Very Low": 2
+        }
+      },
+      "25021": {
+        "member_count": 138,
+        "risk_member_count": 138,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.2716708629023589,
+        "median_risk": 0.04402480319947495,
+        "high_risk_count": 0,
+        "very_high_risk_count": 34,
+        "high_or_very_high_count": 34,
+        "high_or_very_high_percentage": 0.2463768115942029,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "Low": 1,
+          "Moderate": 1,
+          "Very High": 34,
+          "Very Low": 102
+        }
+      },
+      "25023": {
+        "member_count": 83,
+        "risk_member_count": 83,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.23680816155407408,
+        "median_risk": 0.02392391574151039,
+        "high_risk_count": 1,
+        "very_high_risk_count": 17,
+        "high_or_very_high_count": 18,
+        "high_or_very_high_percentage": 0.21686746987951808,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "High": 1,
+          "Moderate": 1,
+          "Very High": 17,
+          "Very Low": 64
+        }
+      },
+      "25025": {
+        "member_count": 148,
+        "risk_member_count": 148,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.246089810461625,
+        "median_risk": 0.03729342432535583,
+        "high_risk_count": 2,
+        "very_high_risk_count": 31,
+        "high_or_very_high_count": 33,
+        "high_or_very_high_percentage": 0.22297297297297297,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "High": 2,
+          "Low": 5,
+          "Very High": 31,
+          "Very Low": 110
+        }
+      },
+      "25027": {
+        "member_count": 167,
+        "risk_member_count": 167,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.22925119678893383,
+        "median_risk": 0.026342645663846434,
+        "high_risk_count": 0,
+        "very_high_risk_count": 34,
+        "high_or_very_high_count": 34,
+        "high_or_very_high_percentage": 0.20359281437125748,
+        "risk_band": "Low",
+        "risk_distribution": {
+          "Low": 5,
+          "Moderate": 1,
+          "Very High": 34,
+          "Very Low": 127
+        }
+      },
+      "44007": {
+        "member_count": 1,
+        "risk_member_count": 1,
+        "risk_coverage": 1.0,
+        "mean_risk": 0.009959435460325539,
+        "median_risk": 0.009959435460325539,
+        "high_risk_count": 0,
+        "very_high_risk_count": 0,
+        "high_or_very_high_count": 0,
+        "high_or_very_high_percentage": 0.0,
+        "risk_band": "Very Low",
+        "risk_distribution": {
+          "Very Low": 1
+        }
+      }
+    },
+    "recommendations": {
+      "25003": [
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 26,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "26 of 26 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 21.78186082877248,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 26,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "26 of 26 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 20.602814698983583,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 26,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "26 of 26 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 17.63487099296325,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize transportation-access outreach",
+          "domain": "transportation",
+          "affected_member_count": 26,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_no_vehicle_pct",
+              "population_median": 9.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "26 of 26 members meet the current-population threshold for housing_no_vehicle_pct.",
+          "source_fields_used": [
+            "housing_no_vehicle_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 15.195465207193122,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        }
+      ],
+      "25005": [
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 108,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "108 of 108 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 103.22908522283035,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 108,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "108 of 108 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 96.1360437842064,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 108,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "108 of 108 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 86.63643471462079,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 108,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "108 of 108 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 78.27677873338548,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 108,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "108 of 108 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 67.59499609069587,
+          "member_data_coverage": 1.0,
+          "rank": 5,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize transportation-access outreach",
+          "domain": "transportation",
+          "affected_member_count": 108,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_no_vehicle_pct",
+              "population_median": 9.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "108 of 108 members meet the current-population threshold for housing_no_vehicle_pct.",
+          "source_fields_used": [
+            "housing_no_vehicle_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 57.46207974980453,
+          "member_data_coverage": 1.0,
+          "rank": 6,
+          "priority": "Moderate"
+        }
+      ],
+      "25009": [
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 124,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "124 of 124 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 111.63878029710717,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 124,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "124 of 124 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 84.49257232212666,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 124,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "124 of 124 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 80.51759186864741,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 124,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "124 of 124 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 60.545738858483205,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 124,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "124 of 124 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 56.27990617670056,
+          "member_data_coverage": 1.0,
+          "rank": 5,
+          "priority": "Moderate"
+        }
+      ],
+      "25011": [
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 17,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "17 of 17 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 16.242376856919467,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 17,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "17 of 17 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 13.942924159499608,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 17,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "17 of 17 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 13.75684128225176,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 17,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "17 of 17 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 7.715793588741204,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        }
+      ],
+      "25013": [
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 87,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "87 of 87 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 84.07505863956219,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 87,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "87 of 87 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 84.07505863956219,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize transportation-access outreach",
+          "domain": "transportation",
+          "affected_member_count": 87,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_no_vehicle_pct",
+              "population_median": 9.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "87 of 87 members meet the current-population threshold for housing_no_vehicle_pct.",
+          "source_fields_used": [
+            "housing_no_vehicle_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 74.00781860828766,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 87,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "87 of 87 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 69.79046129788897,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 87,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "87 of 87 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 66.45738858483189,
+          "member_data_coverage": 1.0,
+          "rank": 5,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 87,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "87 of 87 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 62.85222830336199,
+          "member_data_coverage": 1.0,
+          "rank": 6,
+          "priority": "Moderate"
+        }
+      ],
+      "25015": [
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 39,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "39 of 39 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 30.096168881939004,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 39,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "39 of 39 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 28.266614542611418,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 39,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "39 of 39 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 19.02736512900705,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        }
+      ],
+      "25025": [
+        {
+          "intervention": "Prioritize transportation-access outreach",
+          "domain": "transportation",
+          "affected_member_count": 148,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_no_vehicle_pct",
+              "population_median": 9.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "148 of 148 members meet the current-population threshold for housing_no_vehicle_pct.",
+          "source_fields_used": [
+            "housing_no_vehicle_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 139.494917904613,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 148,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "148 of 148 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 139.08991399530885,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 148,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "148 of 148 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 129.42767787333855,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 148,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "148 of 148 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 126.65050820953871,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 148,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "148 of 148 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 111.83893666927287,
+          "member_data_coverage": 1.0,
+          "rank": 5,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 148,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "148 of 148 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 77.81860828772477,
+          "member_data_coverage": 1.0,
+          "rank": 6,
+          "priority": "Moderate"
+        }
+      ],
+      "25027": [
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 167,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "167 of 167 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 110.33229085222828,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 167,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "167 of 167 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 100.53948397185297,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 167,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "167 of 167 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 82.97771696638,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 167,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "167 of 167 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 81.47615324472244,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        }
+      ],
+      "44007": [
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 1,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "1 of 1 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 0.9984362783424551,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 1,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "1 of 1 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 0.8788115715402658,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 1,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "1 of 1 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 0.8272087568412823,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize economic stability outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 1,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "poverty_pct",
+              "population_median": 9.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "1 of 1 members meet the current-population threshold for poverty_pct.",
+          "source_fields_used": [
+            "poverty_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 0.8162627052384676,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize transportation-access outreach",
+          "domain": "transportation",
+          "affected_member_count": 1,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_no_vehicle_pct",
+              "population_median": 9.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "1 of 1 members meet the current-population threshold for housing_no_vehicle_pct.",
+          "source_fields_used": [
+            "housing_no_vehicle_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 0.8162627052384676,
+          "member_data_coverage": 1.0,
+          "rank": 5,
+          "priority": "Moderate"
+        }
+      ],
+      "25007": [
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 7,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "7 of 7 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 6.578577013291635,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        }
+      ],
+      "25021": [
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 138,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "138 of 138 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 62.634089132134484,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        }
+      ],
+      "25023": [
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 83,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "83 of 83 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 68.00938232994525,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 83,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "83 of 83 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 41.24042220484755,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize digital-access outreach",
+          "domain": "digital_access",
+          "affected_member_count": 83,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "digital_with_broadband_pct",
+              "population_median": 92.9,
+              "direction": "below median"
+            }
+          ],
+          "rationale": "83 of 83 members meet the current-population threshold for digital_with_broadband_pct.",
+          "source_fields_used": [
+            "digital_with_broadband_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 40.49413604378421,
+          "member_data_coverage": 1.0,
+          "rank": 3,
+          "priority": "Moderate"
+        },
+        {
+          "intervention": "Prioritize employment-support outreach",
+          "domain": "economic_stability",
+          "affected_member_count": 83,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "unemployment_pct",
+              "population_median": 3.4,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "83 of 83 members meet the current-population threshold for unemployment_pct.",
+          "source_fields_used": [
+            "unemployment_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 37.67122752150118,
+          "member_data_coverage": 1.0,
+          "rank": 4,
+          "priority": "Moderate"
+        }
+      ],
+      "25001": [
+        {
+          "intervention": "Prioritize housing-cost burden outreach",
+          "domain": "housing",
+          "affected_member_count": 49,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_rent_35_plus_pct",
+              "population_median": 42.1,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "49 of 49 members meet the current-population threshold for housing_rent_35_plus_pct.",
+          "source_fields_used": [
+            "housing_rent_35_plus_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 48.08053166536357,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        },
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 49,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "49 of 49 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 30.07427677873339,
+          "member_data_coverage": 1.0,
+          "rank": 2,
+          "priority": "Moderate"
+        }
+      ],
+      "25019": [
+        {
+          "intervention": "Prioritize insurance-access outreach",
+          "domain": "healthcare_access",
+          "affected_member_count": 2,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "uninsured_pct",
+              "population_median": 2.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "2 of 2 members meet the current-population threshold for uninsured_pct.",
+          "source_fields_used": [
+            "uninsured_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 1.9992181391712276,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        }
+      ],
+      "25017": [
+        {
+          "intervention": "Prioritize transportation-access outreach",
+          "domain": "transportation",
+          "affected_member_count": 283,
+          "prevalence": 1.0,
+          "supporting_factors": [
+            {
+              "field": "housing_no_vehicle_pct",
+              "population_median": 9.5,
+              "direction": "at or above median"
+            }
+          ],
+          "rationale": "283 of 283 members meet the current-population threshold for housing_no_vehicle_pct.",
+          "source_fields_used": [
+            "housing_no_vehicle_pct",
+            "county_fips",
+            "member_id"
+          ],
+          "priority_score": 199.5824863174355,
+          "member_data_coverage": 1.0,
+          "rank": 1,
+          "priority": "High"
+        }
+      ]
+    }
+  }
+}
